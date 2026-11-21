@@ -10,6 +10,11 @@ integers `p` and all integers `q ≥ q₀`.
 **Equivalent lattice form.** If `L ⊂ ℂ` is a lattice whose Weierstrass invariants `g₂(L)` and `g₃(L)` are
 rational, every nonzero real `ω ∈ L` satisfies `μ(ω) ≤ 3`.
 
+**Classical constants.** For every `0 < k < 1` with `k²` rational, the complete elliptic integral
+`K(k) = π / (2 M(1, √(1−k²)))` has `μ(K(k)) ≤ 3` (`M` the arithmetic-geometric mean), e.g. `μ(K(1/2)) ≤ 3`. The
+same bound holds for the real period of every elliptic curve over `ℚ` in the Cremona/LMFDB tables, e.g. `11a1`.
+For curves with complex multiplication the exponent is 2 (G. and D. Chudnovsky).
+
 The bound is ineffective. For curves with complex multiplication, G. and D. Chudnovsky proved exponent 2 (arXiv
 2610.31112). The proof here adapts their determinant method to the one-dimensional grid of real multiples of the
 period, which exists for every curve.
