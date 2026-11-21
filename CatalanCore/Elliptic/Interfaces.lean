@@ -11,17 +11,17 @@ public import Mathlib.Data.Matrix.Basic
 public import Mathlib.Data.Nat.Choose.Basic
 
 /-!
-# Contract types of the T3E campaign (interfaces)
+# Contract types (interfaces)
 
-Definitions and structures only. Producers and consumers of each type are listed in
-`outputs/Compatibility programme/t3e-lean-plan/CONTRACT-TYPES.md`.
+Definitions and structures only. The producers and consumers of each type are the modules of
+`CatalanCore.Elliptic`.
 
-Labels refer to the paper `work/paper-elliptic/elliptic-periods.tex`.
+Labels refer to the paper `paper/elliptic-periods.tex`.
 
 * C0 `IntegralModel`: the package `(d, A, B, Λ, Ω, Ω′, Y, a, z_Q)` over `PeriodPair`
   (`lem:integral`, §"The lattice, the origin chart and the multiplier", `prop:chart`, D4).
 * C1 `OriginChart`, `OriginSeries`: `prop:chart`, `prop:germ` (eq:quartic).
-* C2 `Multiplier`: the theta multiplier `ψ̃ = Θ_Λ²(℘ − a)` with `ψ̃u`, `ψ̃²t` (W05-THETA §3, §8), its
+* C2 `Multiplier`: the theta multiplier `ψ̃ = Θ_Λ²(℘ − a)` with `ψ̃u`, `ψ̃²t` (the theta-multiplier derivation §3, §8), its
   constants `χ`, `S_*`, `C_Λ` and the growth statement `lem:growth`.
 * C3 `Weights`, `Row`, `Col`, `packetEntry`, `packetMatrix`: eq:packet, eq:entry; counting data
   `J_H`, `M`, `b̄`, `𝒯_H`, `N_H`, `c_H`, `ρ_H`.
@@ -127,7 +127,7 @@ structure OriginSeries (c : OriginChart) where
 
 /-! ### C2. Multiplier (theta form) -/
 
-/-- The multiplier package of W05-THETA §8 over a lattice `Λ`, real period `Ω`, second period `Ω′`
+/-- The multiplier package of the theta-multiplier derivation §8 over a lattice `Λ`, real period `Ω`, second period `Ω′`
 and chart point `a`. `F₀ = ψ̃ = Θ_Λ²(℘ − a)`, `F₁ = ψ̃ u = Θ_Λ²`, `F₂ = ψ̃² t = ½ Θ_Λ⁴ ℘′`.
 `transport` is `lem:mult`(b) in theta form. -/
 structure Multiplier (Λ : PeriodPair) (Ω : ℝ) (Ω' : ℂ) (a : ℤ) where

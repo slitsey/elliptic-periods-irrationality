@@ -14,7 +14,7 @@ lattice coordinates) and `a : ℂ` put, off `Λ`,
 * `ψ̂ u = psiHat1 L z   = e^{-2π i z/ω₁} Θ_Λ(z)²`        (entire already),
 * `ψ̂² t = psiHat2 L z  = (ψ̂ u)² ℘'(z)/2`, `t = (℘'/2) u²`, `u = (℘ - a)⁻¹`.
 
-The factor `e^{-2π i z/ω₁}` (W05-THETA-PRODUCT, Remark 5.3) turns the transport factor
+The factor `e^{-2π i z/ω₁}` (the theta-multiplier derivation, Remark 5.3) turns the transport factor
 `n(n-1)` of `Θ_Λ²(℘ - a)` into the paper's `n²`.
 
 * `exists_coreSpec`: entire extensions `F₀, F₂` of `ψ̂`, `ψ̂² t` (Liouville toolbox `L2′`) with

@@ -11,7 +11,7 @@ public import CatalanCore.Elliptic.Analytic.Multiplier
 /-!
 # Determinant transport (row E12, `lem:transport`)
 
-Paper: `work/paper-elliptic/elliptic-periods.tex`, `lem:transport`.
+Paper: `paper/elliptic-periods.tex`, `lem:transport`.
 
 Let `M : Multiplier Λ Ω Ω' a` (`F₀ = ψ`, `F₁ = ψ u`, `F₂ = ψ² t`), `D ∈ ℕ`, centres
 `c_{ji} = cen j i ∈ ℚ` and `δ_{ji} = c_{ji} - jΩ`. For a column `col = (k, b, α)` with

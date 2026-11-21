@@ -8,7 +8,7 @@ public import OAI.NumberTheory.PiExponent.Jets.AffineJetCoefficientInterface
 /-!
 # The eventual source-degree bound of section coefficients (row E09.11, part 2)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.11, §A6(2)). Template: OpenAI (Apache-2.0,
+Labels refer to the proof design (§5 E09.11, §A6(2)). Template: OpenAI (Apache-2.0,
 openai/math fd4aeeb2) `Approximation/WeightedGlobalSectionBound.eventual_supportBound` (generic in the
 exponent family) and `Approximation/AdmissibleMatrixFrame.monomialFrame_exists`.
 

@@ -8,7 +8,7 @@ public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 /-!
 # The determinant data and the packet matrix (row E23)
 
-Labels refer to `work/paper-elliptic/elliptic-periods.tex`, §"The interpolation determinant".
+Labels refer to `paper/elliptic-periods.tex`, §"The interpolation determinant".
 
 * `Weights.mem_rowSet_iff'`, `Weights.mem_colSet_iff`: the finite sets of `Interfaces` are the
   paper's `𝒥_H = {(s,β) : v₀ s + W(β)/θ < H}` and the columns of `ℱ_H` under (S).

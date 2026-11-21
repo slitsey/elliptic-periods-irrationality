@@ -9,7 +9,7 @@ public import Mathlib.RingTheory.PowerSeries.Inverse
 /-!
 # Contact and local length at a centred place (row E09.10c, algebraic core; ledger item P5)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§2 P3, P5; §5 E09.10c) and to the CM paper
+Labels refer to the proof design (§2 P3, P5; §5 E09.10c) and to the CM paper
 (arXiv 2610.31112) l.3563-3589 ("lengths of the centre ideal along a branch").
 
 Let `V` be a discrete valuation ring over `ℂ` (residue field integral over `ℂ`), `z = (u, t, Z) :

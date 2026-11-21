@@ -5,7 +5,7 @@ public import Mathlib.Analysis.SpecialFunctions.Elliptic.Weierstrass
 /-!
 # Rescaling a period pair
 
-Rows E03 and E21 of the T3E ledger (`lem:integral`). Multiplying both periods by a nonzero
+Rows E03 and E21 (`lem:integral`). Multiplying both periods by a nonzero
 complex number `c` multiplies the lattice by `c`, the lattice sums `G n` by `c⁻ⁿ`, hence `g₂` by
 `c⁻⁴` and `g₃` by `c⁻⁶`.
 

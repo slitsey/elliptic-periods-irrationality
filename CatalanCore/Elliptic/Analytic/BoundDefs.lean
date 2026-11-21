@@ -7,7 +7,7 @@ public import CatalanCore.Elliptic.Analytic.Transport
 /-!
 # `thm:analytic`: definitions shared by the four parts (rows E14a-d)
 
-Paper: `work/paper-elliptic/elliptic-periods.tex`, §"The analytic upper bound".
+Paper: `paper/elliptic-periods.tex`, §"The analytic upper bound".
 
 * `Gfun M D col ξ ζ = C(α_c, ξ) · g̃_{D,k_c,b_c}(ζ) · ζ^{|α_c| - |ξ|}` (the entire functions `G_{c,ξ}`;
   the exponent is `∑ i, (α_i - ξ_i)`, equal to `|α| - |ξ|` when `ξ ≤ α`, and `C(α, ξ) = 0` otherwise).

@@ -9,7 +9,7 @@ public import OAI.NumberTheory.PiExponent.LocalAlgebra.ParameterResidueField
 /-!
 # Curve degrees and the uniform margin (row E09.10d, part 1)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.10d, §A4) and to the OpenAI/Apache-2.0 files
+Labels refer to the proof design (§5 E09.10d, §A4) and to the OpenAI/Apache-2.0 files
 `Ampleness/AdmissibleBlowupMargin.lean` (`uniform_margin_of_affine_curve_data`),
 `Ampleness/AdmissibleBlowupPolarization.lean`, `Ampleness/BlowupCurveMargin.lean` and
 `Geometry/PlaceLocalRing.lean` (`residue_integral`, copied below because that leaf is not vendored).

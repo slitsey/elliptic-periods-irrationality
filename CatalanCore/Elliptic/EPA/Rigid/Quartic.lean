@@ -14,7 +14,7 @@ public import Mathlib.RingTheory.Ideal.Quotient.Operations
 /-!
 # Quartic facts of the rigidity step (row E09.5b)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.5b (CM l.1588-1641) and §A5.
+Labels refer to the proof design §5 E09.5b (CM l.1588-1641) and §A5.
 
 Let `F = Fc ch = U + 3aU² + (3a²+A)U³ + f(a)U⁴ ∈ ℂ[U]` be the quartic of the chart and
 `relation ch = t² − F(u) ∈ ℂ[u,t,Z]`.

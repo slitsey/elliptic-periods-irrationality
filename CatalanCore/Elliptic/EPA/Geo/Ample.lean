@@ -10,7 +10,7 @@ public import OAI.NumberTheory.PiExponent.Approximation.CoherentTwistPresentatio
 /-!
 # Ampleness of the blow-up bundle and eventual jet surjectivity (row E09.10d, part 2)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.10d) and to the OpenAI/Apache-2.0 files
+Labels refer to the proof design (§5 E09.10d) and to the OpenAI/Apache-2.0 files
 `Ampleness/AdmissibleBlowupAmple.lean` (`interpolationBundle_ample`),
 `Ampleness/AdmissibleJetAmpleness.lean` (`blowupBundle_ample`) and
 `Jets/AdmissibleJetSurjectivity.lean` (`eventual_jetRestriction_surjective`).

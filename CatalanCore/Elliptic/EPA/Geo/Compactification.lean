@@ -11,7 +11,7 @@ public import OAI.NumberTheory.PiExponent.LocalAlgebra.WeightedBezout
 /-!
 # The ambient compactification of `thm:epa` (row E09.10a)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§0.1, §2 P3 and P7, §5 E09.10a, §A6) and to the
+Labels refer to the proof design (§0.1, §2 P3 and P7, §5 E09.10a, §A6) and to the
 OpenAI/Apache-2.0 library file `Ampleness/AdmissibleBlowupGeometry.lean` (template, lines 15--60).
 
 The ambient design: we compactify `𝔸^{m+2} = Spec ℂ[u, t, Z₁, …, Z_m]` by the monomial

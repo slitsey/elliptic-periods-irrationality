@@ -5,7 +5,7 @@ public import Mathlib.Order.Filter.AtTopBot.Basic
 
 public section
 
-/-! The elliptic-periods challenge statement (unconditional target; plan D1). The proof placeholder is the challenge-statement
+/-! The elliptic-periods challenge statement. The proof placeholder is the challenge-statement
 convention (one `sorry`); `SolutionElliptic` proves exactly this statement, with no hypotheses. -/
 
 namespace EllipticPeriodMeasure

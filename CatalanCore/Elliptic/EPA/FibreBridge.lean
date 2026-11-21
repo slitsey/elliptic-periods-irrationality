@@ -14,8 +14,8 @@ public import Mathlib.RingTheory.Ideal.Height
 /-!
 # The fibre bridge (row E09.9, part 1)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.9 and to CM (arXiv 2610.31112) §11-§12
-(`cm-2610.31112-nolean.tex` l.2756-3014, 3246-3290).
+Labels refer to the proof design §5 E09.9 and to CM (arXiv 2610.31112) §11-§12
+(arXiv 2610.31112 l.2756-3014, 3246-3290).
 
 When the curve lies in the origin fibre `u = t = 0` (E09.8), the elliptic data `(u, t, Z)` is the
 point `ellPad x = (0, 0, x)` with `x = (Z₁, …, Z_m)`, and the elliptic contact data is exactly the

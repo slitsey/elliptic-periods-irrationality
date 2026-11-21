@@ -5,7 +5,7 @@ public import CatalanCore.Elliptic.EPA.Ambient
 /-!
 # The frame derivations and the signed word bound (row E09.1)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.1 and to CM §6 (`l.1325–1360`, `l.809–839`).
+Labels refer to the proof design §5 E09.1 and to CM §6 (`l.1325–1360`, `l.809–839`).
 
 On the curve `P ↦ P(U(T), T, c + V + L(T))` the frame is the family of derivations of `AmbRing m`
 indexed by `Fin (m+1)` (`0` for `T`, `i.succ` for `V_i`):

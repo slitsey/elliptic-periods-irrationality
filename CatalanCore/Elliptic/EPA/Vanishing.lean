@@ -9,7 +9,7 @@ public import OAI.NumberTheory.PiExponent.Geometry.PlaceCenteredBranch
 /-!
 # Excess contact supplies terminal vanishing (row E09.7, part 2)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.7 and CM (arXiv 2610.31112) §9, Theorem
+Labels refer to the proof design §5 E09.7 and CM (arXiv 2610.31112) §9, Theorem
 `thm:contact-terminal` (l.2330) and its use in §10 (l.2689-2712, the quartic margin).
 
 Let `E` be a function field over `ℂ` with the finiteness hypothesis `hfinite` of OAI

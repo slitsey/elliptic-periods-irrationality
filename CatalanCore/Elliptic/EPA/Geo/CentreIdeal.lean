@@ -8,7 +8,7 @@ public import OAI.NumberTheory.PiExponent.LocalAlgebra.WeightedBezout
 /-!
 # The centre ideal of `thm:epa` (row E09.10b, part 1)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§2 P1, §5 E09.10b) and to the OpenAI/Apache-2.0 files
+Labels refer to the proof design (§2 P1, §5 E09.10b) and to the OpenAI/Apache-2.0 files
 `Ampleness/AdmissibleBlowupGeometry.lean` (lines 64--160), `Jets/CompactLogJetIdeal.lean`,
 `Jets/CompactJetPolynomial.lean` (templates; the `inverseTriangularMap` machinery is not needed here
 because the generators are explicit).

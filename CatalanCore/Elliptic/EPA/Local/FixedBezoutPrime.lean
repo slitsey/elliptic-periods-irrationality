@@ -7,8 +7,8 @@ public import OAI.NumberTheory.PiExponent.Jets.PrimeNormalCotangent
 /-!
 # Generic prime-local fixed-hypersurface bound (row E09.4a, prime level)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.4a and to CM Theorem
-`thm:p1-generic-prime-upper` (`cm-2610.31112-nolean.tex`, l.1218–1262).
+Labels refer to the proof design §5 E09.4a and to CM Theorem
+`thm:p1-generic-prime-upper` (arXiv 2610.31112, l.1218–1262).
 
 For a prime `Q` of `ℂ[X₁..X_n]` that is minimal over `I = (f_j)`, a coordinate normal basis `A`
 of cardinality `r ≥ 1`, and a fixed equation `h ∈ I` with nonzero slice `sl_A(h)`: if

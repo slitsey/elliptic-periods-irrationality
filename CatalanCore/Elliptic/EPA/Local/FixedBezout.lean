@@ -5,8 +5,8 @@ public import OAI.NumberTheory.PiExponent.LocalAlgebra.WeightedBezoutBound
 /-!
 # Fixed-equation weighted point bound (row E09.4a, point level)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.4a and to CM Lemma `lem:p1-weighted-point-fixed`
-(`cm-2610.31112-nolean.tex`, l.1149–1217).
+Labels refer to the proof design §5 E09.4a and to CM Lemma `lem:p1-weighted-point-fixed`
+(arXiv 2610.31112, l.1149–1217).
 
 CM bounds the local length of `E[Y]/J` at a point `a` that is minimal over `J`, retaining one
 fixed nonzero equation `h ∈ J` as the first parameter:

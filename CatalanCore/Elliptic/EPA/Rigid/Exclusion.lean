@@ -12,7 +12,7 @@ public import Mathlib.RingTheory.Ideal.Operations
 /-!
 # Proper tangent and normal exclusion imply constant projection (row E09.5d)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.5d and to CM l.1749-1880
+Labels refer to the proof design §5 E09.5d and to CM l.1749-1880
 (`cor:origin-critical-locus`, `prop:origin-proper-tangent`,
 `thm:origin-normal-exclusion-projection`).
 

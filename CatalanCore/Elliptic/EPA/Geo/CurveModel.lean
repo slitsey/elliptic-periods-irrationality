@@ -10,7 +10,7 @@ public import OAI.NumberTheory.PiExponent.Ampleness.NumericalAmpleness
 /-!
 # Curve model data and the degrees of `𝒪(1)` and `𝒥` along a curve (row E09.10c)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.10c, §A3, §A6(3)) and to the OpenAI/Apache-2.0
+Labels refer to the proof design (§5 E09.10c, §A3, §A6(3)) and to the OpenAI/Apache-2.0
 files `Geometry/AdmissibleCurveModel.lean` (`ModelData`) and `Ampleness/AdmissibleCurveModelDegrees`
 (`degreeData`), `Ampleness/AdmissibleBlowupPolarization` (`H`, `H_ample`).
 

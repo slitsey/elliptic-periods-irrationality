@@ -8,7 +8,7 @@ public import Mathlib.RingTheory.Ideal.MinimalPrime.Basic
 /-!
 # Derivative ideals and persistence (row E09.3)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.3 and to the CM paper (arXiv 2610.31112) §8,
+Labels refer to the proof design §5 E09.3 and to the CM paper (arXiv 2610.31112) §8,
 "Persistence for the actual origin derivative ideals" (l.2041-2109): the derivative ideal
 `I_s = (f) + (D_ν P : c(ν) ≤ s)`, the inclusion `D_ν(I_s) ⊆ I_{s + c(ν)}`, and the persistent
 component theorem.

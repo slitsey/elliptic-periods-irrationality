@@ -7,7 +7,7 @@ public import Mathlib.RingTheory.Ideal.Quotient.Operations
 /-!
 # From the centre ideal to packets (row E09.11, part 1)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§2 P1, §5 E09.11) and CM l.3473--3537. Template: OpenAI
+Labels refer to the proof design (§2 P1, §5 E09.11) and CM l.3473--3537. Template: OpenAI
 (Apache-2.0, openai/math fd4aeeb2) `Jets/AffineJetPackets.lean` (`formalJet_packets_surjective`,
 `packets_surjective_of_polynomialIdeal_quotient`), with the log series replaced by the chart series
 `U`, `L` and the logarithmic centre ideal by `Geo.centreIdealPt`.

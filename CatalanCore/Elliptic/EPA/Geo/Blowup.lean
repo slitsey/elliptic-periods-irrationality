@@ -7,7 +7,7 @@ public import OAI.NumberTheory.PiExponent.Ampleness.GlobalBlowupRestriction
 /-!
 # The blow-up of the compactification along the centre ideal (row E09.10b, part 2)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.10b) and to the OpenAI/Apache-2.0 file
+Labels refer to the proof design (§5 E09.10b) and to the OpenAI/Apache-2.0 file
 `Ampleness/AdmissibleBlowupGeometry.lean` lines 100--160 (template: the instance block
 `IsProper`, `IsIntegral`, `IsNoetherian` of the blow-up, `A`, `J`, `exceptional_presents`,
 `isBlowup`).

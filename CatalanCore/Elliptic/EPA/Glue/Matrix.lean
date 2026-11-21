@@ -8,7 +8,7 @@ public import Mathlib.LinearAlgebra.Matrix.ToLin
 /-!
 # Reduction, `F_H` and the D1 matrix (row E09.11, part 3)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.11 and §A1. Template: OpenAI (Apache-2.0,
+Labels refer to the proof design §5 E09.11 and §A1. Template: OpenAI (Apache-2.0,
 openai/math fd4aeeb2) `Approximation/AdmissibleMatrixInterpolation.lean`
 (`actualMatrix_surjective_of_formalPackets`, `packetMap_surjective_of_family`).
 

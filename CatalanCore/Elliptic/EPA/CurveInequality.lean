@@ -7,8 +7,8 @@ public import OAI.NumberTheory.PiExponent.Geometry.CurveInequality
 /-!
 # The curve inequality (row E09.9)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.9 and to CM (arXiv 2610.31112) Theorem
-`origin-curve-inequality` (§12, `cm-2610.31112-nolean.tex` l.3246-3290; ordinary fibre §11,
+Labels refer to the proof design §5 E09.9 and to CM (arXiv 2610.31112) Theorem
+`origin-curve-inequality` (§12, arXiv 2610.31112 l.3246-3290; ordinary fibre §11,
 l.2756-3014). Template: OAI `Geometry/CurveInequality` (openai/math fd4aeeb2, Apache License 2.0,
 Copyright OpenAI).
 

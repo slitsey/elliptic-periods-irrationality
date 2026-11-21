@@ -9,7 +9,7 @@ public import Mathlib.LinearAlgebra.Span.Defs
 /-!
 # Reduction modulo `f = t² − F(u)` (row E09.1)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §2 P2 (CM l.796–799, l.3328, l.1930) and §5 E09.1.
+Labels refer to the proof design §2 P2 (CM l.796–799, l.3328, l.1930) and §5 E09.1.
 
 * `exists_reduced`: a polynomial `P` with `SrcDeg W N P` is congruent modulo `f` to a polynomial `P'`
   with `SrcDeg W N P'` and `t`-degree `≤ 1`. (`t² g ↦ F(u) g` does not raise the source degree

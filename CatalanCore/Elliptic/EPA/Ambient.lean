@@ -13,8 +13,8 @@ public import Mathlib.Tactic.ComputeDegree
 /-!
 # The ambient ring of `thm:epa` and its weighted degree (row E09.1)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§1, §2 P2, §5 E09.1, §A4) and to the paper
-`work/paper-elliptic/elliptic-periods.tex`, `thm:epa` (CM Cor 13.5).
+Labels refer to the proof design (§1, §2 P2, §5 E09.1, §A4) and to the paper
+`paper/elliptic-periods.tex`, `thm:epa` (CM Cor 13.5).
 
 The ambient design (D2-design §0.1): work on `𝔸^{m+2} = Spec ℂ[u, t, Z₁, …, Z_m]` and put the
 relation `f = t² − F(u)` of the quartic `t² = F(u)` into the centre ideal, instead of building the

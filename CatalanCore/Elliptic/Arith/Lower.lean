@@ -10,7 +10,7 @@ public import CatalanCore.Elliptic.EPA.Packet
 /-!
 # E11: the arithmetic lower bound (`prop:arith`)
 
-Labels refer to `work/paper-elliptic/elliptic-periods.tex`, §"The arithmetic lower bound".
+Labels refer to `paper/elliptic-periods.tex`, §"The arithmetic lower bound".
 
 Let `F₀ ≥ 1/θ` and let `Δ ≠ 0` be a selected minor of the packet matrix (eq:entry) for the centres
 `c_{ji} = j p_i / q_i`, with `log q_i ≤ w_i` (the paper has `w_i = ⌈log q_i⌉`). Then

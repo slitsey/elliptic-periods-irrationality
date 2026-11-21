@@ -9,7 +9,7 @@ public import CatalanCore.Elliptic.Analytic.BoundDisc
 /-!
 # `thm:analytic` (d): the two-case assembly (row E14d)
 
-Paper: `work/paper-elliptic/elliptic-periods.tex`, `thm:analytic`. For `Δ ≠ 0`,
+Paper: `paper/elliptic-periods.tex`, `thm:analytic`. For `Δ ≠ 0`,
 
 `log|Δ| / (M H) ≤ E_an + e_H + max {-c_H, -ν (a₀ (1-γ) - b̄)}`,
 `E_an = C_Λ K²/(2 w₀) + (ν + log(4 r_* K²))/w_min`, `e_H = C_Λ K²/H + ρ_H + log|𝒯_H|/H`.

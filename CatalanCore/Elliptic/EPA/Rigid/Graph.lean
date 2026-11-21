@@ -10,7 +10,7 @@ public import Mathlib.LinearAlgebra.StdBasis
 /-!
 # The tangent graph and the adjunction of `u` (row E09.5a)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.5a and to CM §7 (l.1265–1295, l.1767–1790).
+Labels refer to the proof design §5 E09.5a and to CM §7 (l.1265–1295, l.1767–1790).
 
 Let `Q` be a prime of `R = AmbRing m = ℂ[u, t, Z]` with `f = relation ch ∈ Q`, let `K = Frac(R/Q)`
 be its literal residue field (`Q.ResidueField`), `J̄ = F′(ū)` and `t̄` the residues of

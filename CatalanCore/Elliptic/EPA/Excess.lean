@@ -16,8 +16,8 @@ public import Mathlib.RingTheory.Ideal.Height
 /-!
 # Excess contact forces the curve into the origin fibre (row E09.8)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.8 and to CM (arXiv 2610.31112) Proposition
-`origin-excess-fiber` (`cm-2610.31112-nolean.tex` l.3190, proof l.3199-3244). Template: OAI
+Labels refer to the proof design §5 E09.8 and to CM (arXiv 2610.31112) Proposition
+`origin-excess-fiber` (arXiv 2610.31112 l.3190, proof l.3199-3244). Template: OAI
 `Geometry/CurveInequality.excess_implies_zeroth_eq_one` (openai/math fd4aeeb2, Apache License 2.0,
 Copyright OpenAI).
 

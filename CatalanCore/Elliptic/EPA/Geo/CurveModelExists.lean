@@ -12,7 +12,7 @@ public import OAI.NumberTheory.PiExponent.Jets.CompactJetIdealCoherent
 /-!
 # Existence of the curve model (row E09.10c)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.10c) and to the OpenAI/Apache-2.0 files
+Labels refer to the proof design (§5 E09.10c) and to the OpenAI/Apache-2.0 files
 `Geometry/AdmissibleCurveImage.lean`, `Geometry/AdmissibleCurveCoordinates.lean` and
 `Geometry/AdmissibleCurveModel.lean` (`existsModelData`), which are followed line by line with the
 log compactification replaced by the ambient compactification `P` and the chart `ambChart`.

@@ -13,7 +13,7 @@ public import OAI.NumberTheory.PiExponent.Approximation.RectangularVolume
 /-!
 # Quartic matched lengths and the persistent comparison (row E09.4c)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.4c and to CM `cm-2610.31112-nolean.tex`
+Labels refer to the proof design §5 E09.4c and to CM arXiv 2610.31112
 l.1380–1450 (the upper bound with the factor `4`, the corrected growth constants, the comparison
 constant `C₄`) and input (A) l.3034–3055.
 

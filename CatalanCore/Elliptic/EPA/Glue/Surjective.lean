@@ -10,7 +10,7 @@ public import OAI.NumberTheory.PiExponent.Ampleness.BlowupJetSurjectivity
 /-!
 # Packets from jet surjectivity (row E09.11, part 4)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.11, §A1). Templates: OpenAI (Apache-2.0,
+Labels refer to the proof design (§5 E09.11, §A1). Templates: OpenAI (Apache-2.0,
 openai/math fd4aeeb2) `Jets/AffineJetFramedPackets.surjective_of_jetRestriction`,
 `Jets/AdmissibleJetPackets.formalPackets_surjective_of_jetRestriction`,
 `Approximation/AdmissibleMatrixInterpolation.packetMap_surjective_of_family`.

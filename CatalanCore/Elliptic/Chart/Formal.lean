@@ -13,7 +13,7 @@ public import Mathlib.Tactic.Ring
 /-!
 # The formal origin chart (row E05, `prop:chart`)
 
-Paper: `work/paper-elliptic/elliptic-periods.tex`, `eq:quartic` and `prop:chart`.
+Paper: `paper/elliptic-periods.tex`, `eq:quartic` and `prop:chart`.
 
 For an `OriginChart c` (`A, B, a` with `4A³ + 27B² ≠ 0` and `f(a) ≠ 0`) let
 `F(U) = U + 3a U² + (3a² + A) U³ + f(a) U⁴ ∈ ℤ[U]`. Then

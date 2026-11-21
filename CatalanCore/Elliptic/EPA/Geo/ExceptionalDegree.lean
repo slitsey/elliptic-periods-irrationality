@@ -13,7 +13,7 @@ public import OAI.NumberTheory.PiExponent.Geometry.CurveNormalizationModel
 /-!
 # The exceptional degree along a curve (row E09.10c)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§2 P3, §5 E09.10c, §A3, §A4) and to the OpenAI/Apache-2.0
+Labels refer to the proof design (§2 P3, §5 E09.10c, §A3, §A4) and to the OpenAI/Apache-2.0
 file `Ampleness/ExceptionalCurveDegree.lean` (`centerMorphism_eq_centeredLift`,
 `compactIdeal_comap_ne_bot_of_generic`, `compactIdeal_degree_eq_neg_contact_sum`), whose
 log-specific tail is replaced here by the elliptic computation of `Geo/Contact.lean`.

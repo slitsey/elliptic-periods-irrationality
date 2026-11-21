@@ -7,7 +7,7 @@ public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 /-!
 # The parameter system of `thm:epa` (row E09.0)
 
-Labels refer to `work/paper-elliptic/elliptic-periods.tex` (`thm:epa`, eq:epa-base,
+Labels refer to `paper/elliptic-periods.tex` (`thm:epa`, eq:epa-base,
 eq:epa-thresholds) and to the Chudnovsky--Chudnovsky paper Corollary 13.5 (§12, "All thresholds can
 be chosen before the centers").
 

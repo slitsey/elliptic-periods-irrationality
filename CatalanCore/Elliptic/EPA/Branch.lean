@@ -12,7 +12,7 @@ public import Mathlib.Analysis.Complex.Polynomial.Basic
 /-!
 # The elliptic branch layer (row E09.7, part 1: branches, contact, order bound)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §2 P4, P5 and §5 E09.7, and to the CM paper
+Labels refer to the proof design §2 P4, P5 and §5 E09.7, and to the CM paper
 (arXiv 2610.31112) §9, l.2200-2400 ("From actual branch contact to a curve prime").
 
 Let `A` be a discrete valuation ring over `ℂ` with `Algebra.IsIntegral ℂ (ResidueField A)` and

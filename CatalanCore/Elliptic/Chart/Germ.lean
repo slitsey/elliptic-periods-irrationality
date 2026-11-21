@@ -10,7 +10,7 @@ public import CatalanCore.Elliptic.Lattice.Divisor
 /-!
 # The germ identity (row E06, `prop:germ`, CM Props 3.2–3.3)
 
-Paper: `work/paper-elliptic/elliptic-periods.tex`, `prop:germ`.
+Paper: `paper/elliptic-periods.tex`, `prop:germ`.
 
 Let `L : PeriodPair` have `g₂ = −4A`, `g₃ = −4B`, let `c : OriginChart` have these `A, B` and the
 chart point `a`, and let `s : OriginSeries c` be the formal series `U, L` of `prop:chart`.

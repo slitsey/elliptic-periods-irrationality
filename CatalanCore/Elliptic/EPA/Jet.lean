@@ -11,7 +11,7 @@ public import Mathlib.Algebra.Polynomial.Derivation
 /-!
 # The packet map `Φ_c` and contact propagation (row E09.2)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.2 (CM l.657–732, 1992–2030, 2239) and §2 P1.
+Labels refer to the proof design §5 E09.2 (CM l.657–732, 1992–2030, 2239) and §2 P1.
 
 For a centre `c ∈ ℂ^m` the packet homomorphism sends `P ∈ ℂ[u, t, Z]` to
 `Φ_c(P) = P(U(T), T, c + V + L(T)) ∈ ℂ⟦T, V₁, …, V_m⟧ = MvPowerSeries (Fin (m+1)) ℂ`

@@ -11,7 +11,7 @@ It contains third-party material, also licensed under the Apache License, Versio
    Only the files needed by this development are included. They were modified as follows:
    - each file was mechanically converted to Lean's module system (a `module` header,
      `public import`, and `@[expose] public section` after the imports);
-   - minimal changes were made for Lean v4.35.0-rc2 and Mathlib v4.35.0-rc2.
+   - minimal changes were made for Lean v4.35.0-rc2 and Mathlib v4.35.0-rc2 (see PORTING.md).
    Apart from this, the mathematical content and the declarations are unchanged.
 
 2. PrimeNumberTheoremAnd/  (9 files)
@@ -31,5 +31,9 @@ It contains third-party material, also licensed under the Apache License, Versio
    limit were removed; norm_pow_lt_one was reproved for normed fields. The file carries a header naming
    its source and changes.
 
+4. scripts/, test/, docbuild/, .github/, Gemfile, Gemfile.lock
+   From the Palomar submission template, https://github.com/PalomarRegistry/PalomarTemplate,
+   adapted to this project.
+
 Everything else (CatalanCore/, SolutionElliptic.lean, ChallengeElliptic.lean, comparator.json,
-formalization.yaml, README.md, paper/) is new work for this project.
+formalization.yaml, README.md, PORTING.md, paper/) is new work for this project.

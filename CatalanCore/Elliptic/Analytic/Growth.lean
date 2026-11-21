@@ -14,7 +14,7 @@ For the multiplier package `M : Multiplier Λ Ω Ω' a` with `0 < Ω`, `0 < Y = 
 
 with `χ = 2π/(ΩY)` and `S_*` the (finite) sup of the `F_i` over the fundamental rectangle, `S_* ≥ 1`.
 
-Proof (W05-THETA-PRODUCT §6): `n = ⌊Im z / Y⌋`, `l = ⌊Re (z - nΩ') / Ω⌋`, `z₁ = z - lΩ - nΩ'` in the
+Proof (the theta-multiplier derivation §6): `n = ⌊Im z / Y⌋`, `l = ⌊Re (z - nΩ') / Ω⌋`, `z₁ = z - lΩ - nΩ'` in the
 rectangle, translate formula (`translate₀/₁/₂`, with the `n²` transport of `ψ̂`), then the single
 inequality `2 n Im z₁ + n² Y = ((Im z)² - (Im z₁)²)/Y ≤ (|Im z| + Y)²/Y`. No theta-series bound is used.
 -/

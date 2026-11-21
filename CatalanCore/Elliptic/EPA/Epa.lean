@@ -7,7 +7,7 @@ public import CatalanCore.Elliptic.EPA.Glue.Surjective
 /-!
 # The theorem `thm:epa` and the D1 interface (row E09.12)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` (§5 E09.12, §A1). Paper: `thm:epa`
+Labels refer to the proof design (§5 E09.12, §A1). Paper: `thm:epa`
 (Chudnovsky--Chudnovsky, Cor. 13.5; paper l.451--470).
 
 * `epa_complex`: the complex-centre form of `thm:epa`: there is `D > 0` (depending on the data, the

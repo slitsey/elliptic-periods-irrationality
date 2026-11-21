@@ -7,8 +7,8 @@ public import OAI.NumberTheory.PiExponent.Jets.TransverseMultiplicity
 /-!
 # Taylor lower bound for a general frame (row E09.4b)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.4b and to CM Lemma `lem:p1-generic-taylor-lower`
-(`cm-2610.31112-nolean.tex`, l.962 and its corollary l.1048–1060).
+Labels refer to the proof design §5 E09.4b and to CM Lemma `lem:p1-generic-taylor-lower`
+(arXiv 2610.31112, l.962 and its corollary l.1048–1060).
 
 For a prime `Q` of `ℂ[X₁..X_n]` and derivations `D_i` of `ℂ[X]` (letters `i : ι`), let `B : Fin k → ι`
 select `k` letters whose coefficient vectors `(D_{B j}(X_l))_l`, reduced modulo `Q`, are independent

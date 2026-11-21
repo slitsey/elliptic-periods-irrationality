@@ -9,7 +9,7 @@ public import Mathlib.LinearAlgebra.Dimension.Finrank
 /-!
 # The auxiliary polynomial (row E09.6)
 
-Labels refer to `D2-DESIGN-2026-11-20.md` §5 E09.6 (CM Thm `origin-polar-auxiliary`, l.2528, and the
+Labels refer to the proof design §5 E09.6 (CM Thm `origin-polar-auxiliary`, l.2528, and the
 "precise route" l.2587–2628).
 
 `ell_auxiliary`: for `K (w₀/v₀) θ^m ρ^{m+1} < 1` there is a threshold `N₀`, independent of the
