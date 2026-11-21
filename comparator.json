@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ChallengeElliptic",
+  "solution_module": "SolutionElliptic",
+  "theorem_names": [
+    "EllipticPeriodMeasure.real_period_measure_three"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,114 @@
+# Formalization metadata for SolutionElliptic.lean (the irrationality exponent of real elliptic periods).
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "A bound for the irrationality exponent of real elliptic periods"
+  description: >-
+    Let L be a lattice in the complex plane whose Weierstrass invariants g2 and g3 are
+    rational, and let omega be a nonzero real element of L. For every epsilon > 0, every
+    sufficiently large integer q and every integer p, |omega - p/q| > q^(-(3 + epsilon)).
+    So the irrationality exponent mu(omega) is at most 3. By uniformization this is
+    equivalent to the statement for real periods of invariant differentials of elliptic
+    curves over Q, with or without complex multiplication. The proof adapts the
+    interpolation-determinant method of G. and D. Chudnovsky to the one-dimensional grid of
+    integer multiples of the real period.
+  authors:
+    - "Sean Litsey"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Sean Litsey"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11J82", "11J89", "11G05", "33E05"]
+
+sources:
+  - title: "A bound for the irrationality exponent of real elliptic periods"
+    type: original-proof
+    relationship: other
+    note: >-
+      The companion paper by S. Litsey (2026), whose arguments the Lean development
+      follows. LaTeX source and PDF are in paper/.
+  - title: "Irrationality exponents of real CM elliptic periods and powers of the lemniscate period"
+    authors:
+      - "G. V. Chudnovsky"
+      - "D. V. Chudnovsky"
+    type: preprint
+    location: "https://arxiv.org/abs/2610.31112"
+    relationship: builds-on
+    note: >-
+      Supplies the construction and the nonvanishing theorem for the interpolation
+      determinant, which is proved in this repository (CatalanCore.Elliptic.EPA).
+    author_endorsement: not-contacted
+  - title: "The irrationality exponent of pi is 2"
+    authors:
+      - "OpenAI"
+    type: "preprint with Lean formalization"
+    location: "https://github.com/openai/math"
+    relationship: builds-on
+    note: >-
+      The vendored files in OAI/ and PrimeNumberTheoremAnd/ come from this repository
+      (see NOTICE).
+    author_endorsement: not-contacted
+  - title: "Tau Ceti"
+    type: formalization
+    location: "https://github.com/TauCetiProject/TauCeti"
+    relationship: builds-on
+    note: >-
+      One file, the theta-product part of QPochhammer.lean, is vendored in TauCeti/
+      (see NOTICE).
+    author_endorsement: not-contacted
+
+related_formalizations: []
+
+status:
+  scope: >-
+    SolutionElliptic.lean exports EllipticPeriodMeasure.real_period_measure_three from
+    CatalanCore.Elliptic.real_period_measure_three. The nonvanishing theorem, the integral
+    model, the arithmetic lower bound, the analytic upper bound and the counting are
+    proved, not assumed. The theorem has no sorry and no native_decide; #print axioms
+    reports only propext, Classical.choice and Quot.sound. ChallengeElliptic.lean uses only
+    Mathlib imports and contains the single sorry of the challenge statement. Run
+    lake comparator --config comparator.json to check the statement and replay the proof
+    with Lean and NanoDa. Put the pinned toolchain bin directory on PATH.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: agent
+      models: ["Claude Opus 5.5", "Claude Sonnet 5.5", "Claude Fable 5.2"]
+      framework: "Claude Code"
+      tool_setup: >-
+        AI agents wrote the mathematics, Lean proofs and text, using Lean 4, Lake and Mathlib.
+  spend_usd: "subscription-based"
+  notes: >-
+    The agents worked at the request of the human author, who posed the problem, directed
+    the work and is responsible for the submission.
+
+fidelity:
+  divergences: >-
+    The Lean statement is the lattice form of the theorem (Theorem 1.2 of the paper), with
+    the lattice given by Mathlib's PeriodPair and the real period omega required to lie in
+    L.lattice. The paper's headline, the form for real periods of elliptic curves over Q, is
+    equivalent to it by classical uniformization; that equivalence is not formalized. The
+    inequality is stated as q^(-(3 + epsilon)) < |omega - p/q| for all large natural q and
+    all integers p.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    The Lean statement was checked against Theorem 1.2 of the companion paper. No
+    independent human review has been performed.
+
+alignment:
+  namespace: "EllipticPeriodMeasure"
+  statements:
+    - source: "Litsey, A bound for the irrationality exponent of real elliptic periods (2026), Theorem 1.2"
+      lean: "EllipticPeriodMeasure.real_period_measure_three"
+      module: "SolutionElliptic"
+      status: proved
+      note: "Lattice form: mu(omega) <= 3 for nonzero real omega in a lattice with rational g2, g3."

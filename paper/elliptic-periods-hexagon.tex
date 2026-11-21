@@ -136,7 +136,10 @@ exponent of the real period $\Omega_E$ of every elliptic curve $E$ over $\Q$ in 
 LMFDB, for instance the curve \texttt{11a1} of smallest conductor.
 
 The proof does not give $q_0(\varepsilon,\omega)$: the
-bound is ineffective. A formalization in Lean~4 is intended to follow. The use of AI in this work is disclosed at
+bound is ineffective. Theorem~\ref{thm:main} is formalized in Lean~4 with Mathlib as
+\texttt{EllipticPeriodMeasure.\allowbreak real\_\allowbreak period\_\allowbreak measure\_\allowbreak three}.
+The proof uses no axioms beyond \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. The source
+is at \url{https://github.com/slitsey/elliptic-periods-irrationality}. The use of AI in this work is disclosed at
 the end of the paper.
 
 \subsection{Background}\label{ssec:background}
@@ -952,7 +955,8 @@ The mathematics and the text of this paper were produced by AI systems at the re
 posed the problem, directed the work and is responsible for the paper. The systems were Claude Opus~5.5, Claude
 Sonnet~5.5 and Claude Fable~5.2 (Anthropic), running in Claude Code. The construction, the nonvanishing theorem
 and the method of the proof are due to G.~V.~Chudnovsky and D.~V.~Chudnovsky \cite{Chudnovsky26,ChudnovskyChudnovsky26},
-building on OpenAI's proof for $\pi$ \cite{OpenAIPi2026}.
+building on OpenAI's proof for $\pi$ \cite{OpenAIPi2026}. The Lean files reuse code from OpenAI's formalization
+for Catalan's constant and from the Tau Ceti project, both under the Apache License 2.0.
 
 \providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
 \providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
