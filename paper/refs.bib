@@ -1,0 +1,243 @@
+% Bibliography of the elliptic-period paper (20 Nov 2026).
+% Entries shared with paper-trigamma/refs.bib are copied with their verification comments.
+% Every other entry records how it was checked. Unconfirmed items were dropped.
+
+% ---------------- copied from paper-trigamma/refs.bib ----------------
+@misc{OpenAIPi2026,
+  author       = {{OpenAI}},
+  title        = {The irrationality exponent of {$\pi$} is 2},
+  year         = {2026},
+  howpublished = {Preprint dated September 24, 2026, released October 6, 2026, with a Lean formalization,
+                  \href{https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026}{paper}
+                  and \href{https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/OAI/NumberTheory/PiExponent}{Lean formalization}
+                  (repository commit \texttt{fd4aeeb})}
+}
+
+% v2 (8 Oct 2026) verified at arxiv.org/abs/2610.10192 on 29 Oct 2026.
+@misc{LiuJiangZhang26,
+  author        = {Liu, Jingwen and Jiang, Kai and Zhang, Pingwen},
+  title         = {Irrationality exponents of logarithms of positive rational numbers},
+  year          = {2026},
+  note          = {Preprint, 7 October 2026, revised 5 November 2026 (v3), \href{https://arxiv.org/abs/2610.10192}{arXiv:2610.10192}},
+  eprint        = {2610.10192},
+  archivePrefix = {arXiv},
+  primaryClass  = {math.NT}
+}
+
+% ---------------- the papers built on (checked 20 Nov 2026) ----------------
+% arxiv.org/abs/2610.26539 read 20 Nov 2026: title, sole author, v1 19 Oct 2026, math.NT.
+% Theorem 1.1 read in the TeX source (src-2610.26539/main.tex): mu(Omega)=2 for Omega = 2 int_0^1 (1-t^4)^{-1/2} dt.
+@misc{Chudnovsky26,
+  author        = {Chudnovsky, Gregory V.},
+  title         = {The irrationality exponent of the lemniscate period: a determinant proof with a {L}ean 4 formalization},
+  year          = {2026},
+  note          = {Preprint, 19 October 2026, \href{https://arxiv.org/abs/2610.26539}{arXiv:2610.26539}},
+  eprint        = {2610.26539},
+  archivePrefix = {arXiv},
+  primaryClass  = {math.NT}
+}
+
+% arxiv.org/abs/2610.31112 read 20 Nov 2026: title, the two authors, v1 22 Oct 2026, math.NT.
+% Statement numbers (Prop. 3.1, Lemma 15.1, Cor. 13.5, Lemma 16.2, Thm 16.3, Thm 17.1, Thm 18.1) read in the
+% TeX source src-2610.31112/main.tex and in the compiled text cm.txt.
+@misc{ChudnovskyChudnovsky26,
+  author        = {Chudnovsky, Gregory V. and Chudnovsky, David V.},
+  title         = {Irrationality exponents of real {CM} elliptic periods and powers of the lemniscate period},
+  year          = {2026},
+  note          = {Preprint, 22 October 2026, \href{https://arxiv.org/abs/2610.31112}{arXiv:2610.31112}},
+  eprint        = {2610.31112},
+  archivePrefix = {arXiv},
+  primaryClass  = {math.NT}
+}
+
+% ---------------- classical (checked 20 Nov 2026) ----------------
+% Roth55: Crossref record of DOI 10.1112/S0025579300000644 (Mathematika 2, no. 1, 1-20, June 1955).
+@article{Roth55,
+  author  = {Roth, Klaus F.},
+  title   = {Rational approximations to algebraic numbers},
+  journal = {Mathematika},
+  volume  = {2},
+  year    = {1955},
+  pages   = {1--20},
+  doi     = {10.1112/S0025579300000644}
+}
+
+% Siegel32: Crossref record of DOI 10.1515/crll.1932.167.62 (J. reine angew. Math. 167, 62-69).
+% Content (at least one of two basis periods is transcendental when g2, g3 are algebraic) as Theorem 17 of Waldschmidt08.
+@article{Siegel32,
+  author  = {Siegel, Carl Ludwig},
+  title   = {{\"U}ber die {P}erioden elliptischer {F}unktionen},
+  journal = {J. Reine Angew. Math.},
+  volume  = {167},
+  year    = {1932},
+  pages   = {62--69},
+  doi     = {10.1515/crll.1932.167.62}
+}
+
+% Schneider37: Crossref record of DOI 10.1007/BF01571618 (Math. Ann. 113, 1-13, issue dated 1937).
+% Waldschmidt08 dates the memoir 1936 and records its content as Theorem 18 (every nonzero period is
+% transcendental when g2, g3 are algebraic) and Corollary 21 (tau and j(tau) algebraic implies tau imaginary quadratic).
+% Verified 20 Nov: Crossref, EuDML, Zbl 0014.20402 (imprint 1937).
+@article{Schneider37,
+  author  = {Schneider, Theodor},
+  title   = {Arithmetische {U}ntersuchungen elliptischer {I}ntegrale},
+  journal = {Math. Ann.},
+  volume  = {113},
+  number  = {1},
+  year    = {1937},
+  pages   = {1--13},
+  doi     = {10.1007/BF01571618}
+}
+
+% Feldman51, Feldman74: bibliographic data as in the reference list of Waldschmidt08 (items 77 and 80), whose
+% Section 3.1 attributes the measures of transcendence for the results of Siegel and Schneider to Fel'dman.
+% Verified 20 Nov: Mathnet im3306, MR 42471, Zbl 0044.27105.
+@article{Feldman51,
+  author  = {Fel'dman, Naum I.},
+  title   = {The approximation of certain transcendental numbers. {II}. {T}he approximation of certain numbers connected with the {W}eierstrass function {$\wp(z)$}},
+  journal = {Izv. Akad. Nauk SSSR Ser. Mat.},
+  volume  = {15},
+  number  = {2},
+  year    = {1951},
+  pages   = {153--176},
+  note    = {In Russian. MR 42471, Zbl 0044.27105}
+}
+
+% Verified 20 Nov: Acta Arith. issue page, DOI 10.4064/aa-24-5-477-489 (dated 1974).
+@article{Feldman74,
+  author  = {Fel'dman, Naum I.},
+  title   = {The periods of elliptic functions},
+  journal = {Acta Arith.},
+  volume  = {24},
+  number  = {5},
+  year    = {1974},
+  pages   = {477--489},
+  doi     = {10.4064/aa-24-5-477-489},
+  note    = {In Russian; English title as in Waldschmidt08}
+}
+
+% Masser75: data as in the reference list of Waldschmidt08 (item 144); content (Theorem 26 there and the
+% measures of linear independence produced in the same monograph) as stated in Section 4.1 of Waldschmidt08.
+% Verified 20 Nov: Springer LNM 437 record.
+@book{Masser75,
+  author    = {Masser, David W.},
+  title     = {Elliptic functions and transcendence},
+  series    = {Lecture Notes in Math.},
+  volume    = {437},
+  publisher = {Springer-Verlag},
+  address   = {Berlin},
+  year      = {1975}
+}
+
+% PhilipponWaldschmidt88: Crossref record of DOI 10.1215/ijm/1255989131 (Illinois J. Math. 32, no. 2, 281-314).
+% PhilipponWaldschmidt89: Crossref record of DOI 10.1515/9783110852790.798 (pages 798-805).
+% Waldschmidt08, Section 4.3: these give the first effective lower bounds for linear forms in logarithms on
+% commutative algebraic groups, including the first measures for elliptic logarithms valid without CM.
+@article{PhilipponWaldschmidt88,
+  author  = {Philippon, Patrice and Waldschmidt, Michel},
+  title   = {Formes lin\'eaires de logarithmes sur les groupes alg\'ebriques commutatifs},
+  journal = {Illinois J. Math.},
+  volume  = {32},
+  number  = {2},
+  year    = {1988},
+  pages   = {281--314},
+  doi     = {10.1215/ijm/1255989131}
+}
+
+@incollection{PhilipponWaldschmidt89,
+  author    = {Philippon, Patrice and Waldschmidt, Michel},
+  title     = {Formes lin\'eaires de logarithmes elliptiques et mesures de transcendance},
+  booktitle = {Th\'eorie des nombres ({Q}u\'ebec, 1987)},
+  publisher = {de Gruyter},
+  address   = {Berlin},
+  year      = {1989},
+  pages     = {798--805},
+  doi       = {10.1515/9783110852790.798}
+}
+
+% HirataKohno90: Crossref record of DOI 10.4064/aa-56-2-111-133 (Acta Arith. 56, no. 2, 111-133).
+% HirataKohno91: Crossref record of DOI 10.1007/BF01245082 (Invent. Math. 104, 401-433).
+@article{HirataKohno90,
+  author  = {Hirata-Kohno, Noriko},
+  title   = {Mesures de transcendance pour les quotients de p\'eriodes d'int\'egrales elliptiques},
+  journal = {Acta Arith.},
+  volume  = {56},
+  number  = {2},
+  year    = {1990},
+  pages   = {111--133},
+  doi     = {10.4064/aa-56-2-111-133}
+}
+
+@article{HirataKohno91,
+  author  = {Hirata-Kohno, Noriko},
+  title   = {Formes lin\'eaires de logarithmes de points alg\'ebriques sur les groupes alg\'ebriques},
+  journal = {Invent. Math.},
+  volume  = {104},
+  number  = {2},
+  year    = {1991},
+  pages   = {401--433},
+  doi     = {10.1007/BF01245082}
+}
+
+% David95: Crossref record of DOI 10.24033/msmf.376 (pages 1-143, 1995); series number 62 as in Waldschmidt08, item 60.
+@article{David95,
+  author  = {David, Sinnou},
+  title   = {Minorations de formes lin\'eaires de logarithmes elliptiques},
+  journal = {M\'em. Soc. Math. France (N.S.)},
+  volume  = {62},
+  year    = {1995},
+  pages   = {1--143},
+  doi     = {10.24033/msmf.376}
+}
+
+% Waldschmidt08: PDF SurveyTrdceEllipt2006.pdf from the author's page (imj-prg.fr/~michel.waldschmidt) read
+% 20 Nov 2026 (printed pages 143-188); Crossref record of DOI 10.1007/978-0-387-78510-3_7 (Springer, 2008).
+% Verified 20 Nov: Crossref, Dev. Math. 17, pp. 143-188.
+@incollection{Waldschmidt08,
+  author    = {Waldschmidt, Michel},
+  title     = {Elliptic functions and transcendence},
+  booktitle = {Surveys in Number Theory},
+  series    = {Dev. Math.},
+  volume    = {17},
+  publisher = {Springer},
+  address   = {New York},
+  year      = {2008},
+  pages     = {143--188},
+  doi       = {10.1007/978-0-387-78510-3_7}
+}
+
+% RosserSchoenfeld62: Crossref record of DOI 10.1215/ijm/1255631807 (Illinois J. Math. 6, 1962); pages 64-94
+% as in the verified bibliography of arXiv:2610.27799. Theorem 12 there: psi(x) < 1.03883 x for x > 0.
+% Verified 20 Nov: Crossref record; Theorem 12 (p. 71) confirmed at secondary sources only.
+@article{RosserSchoenfeld62,
+  author  = {Rosser, J. Barkley and Schoenfeld, Lowell},
+  title   = {Approximate formulas for some functions of prime numbers},
+  journal = {Illinois J. Math.},
+  volume  = {6},
+  number  = {1},
+  year    = {1962},
+  pages   = {64--94},
+  doi     = {10.1215/ijm/1255631807}
+}
+
+% Silverman09: standard text; the uniformization statement is cited as Corollary VI.5.1.1 of the second edition
+% in arXiv:2503.22770 (checked 20 Nov 2026), with g2 = -4A, g3 = -4B for y^2 = x^3 + Ax + B.
+@book{Silverman09,
+  author    = {Silverman, Joseph H.},
+  title     = {The Arithmetic of Elliptic Curves},
+  edition   = {Second},
+  series    = {Grad. Texts in Math.},
+  volume    = {106},
+  publisher = {Springer},
+  address   = {Dordrecht},
+  year      = {2009}
+}
+
+% DLMF: Section 23.2 (sigma function, quasi-periodicity 23.2.15-23.2.17, Legendre's relation 23.2.14),
+% the reference used for the same facts in ChudnovskyChudnovsky26; dlmf.nist.gov/23.2 checked 20 Nov 2026.
+@misc{DLMF,
+  author       = {{NIST}},
+  title        = {Digital {L}ibrary of {M}athematical {F}unctions},
+  howpublished = {Chapter 23, \url{https://dlmf.nist.gov/23.2}},
+  year         = {2026}
+}

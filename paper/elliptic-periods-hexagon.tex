@@ -1,0 +1,1030 @@
+\documentclass[11pt]{amsart}
+\IfFileExists{lmodern.sty}%
+  {\usepackage[T1]{fontenc}\usepackage{lmodern}\usepackage{microtype}}%
+  {\usepackage[expansion=false]{microtype}}
+\usepackage{amssymb,mathtools}
+\usepackage{enumitem}
+\emergencystretch=2.5em
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A bound for the irrationality exponent of real elliptic periods},pdfauthor={Sean Litsey}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\setcounter{tocdepth}{1}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\Ear}{E_{\mathrm{ar}}}
+\newcommand{\Ean}{E_{\mathrm{an}}}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\fa}{\mathcal I}
+\newcommand{\tpsi}{\widetilde\psi}
+\newcommand{\tg}{\widetilde g}
+\newcommand{\tA}{\widetilde A}
+\newcommand{\bb}{\bar b}
+\newcommand{\CM}{\cite{ChudnovskyChudnovsky26}}
+
+\begin{document}
+
+\title{A bound for the irrationality exponent of real elliptic periods}
+
+\author{Sean Litsey}
+\email{sean.litsey.math@gmail.com}
+
+\date{November 20, 2026}
+
+\subjclass[2020]{Primary 11J82; Secondary 11J89, 11G05, 33E05}
+
+\keywords{Irrationality exponent, elliptic periods, interpolation determinants, Weierstrass sigma function}
+
+\begin{abstract}
+Let $L\subset\C$ be a lattice whose Weierstrass invariants $g_2(L)$ and $g_3(L)$ are rational. We prove that every
+nonzero real $\omega\in L$ has irrationality exponent $\mu(\omega)\le3$. By uniformization this covers every
+nonzero real period of every elliptic curve over $\Q$, with or without complex multiplication. G.~and
+D.~Chudnovsky proved $\mu(\omega)=2$ when the curve has complex multiplication. Their proof uses an
+interpolation determinant of jets at centres on a two-dimensional grid of periods. Without complex
+multiplication the only algebraic multiples of a real period inside the lattice are its integer multiples, so
+the centres lie on a line. We show that the method still works on this one-dimensional grid. The arithmetic is
+carried out over $\Z$ in the chart at the origin. A multiplier made periodic along the real period removes the
+Gaussian factor in the transport of the determinant. The analytic estimate then costs a factor $K^2$ in place
+of $K$, where $K$ is the number of centres. The two estimates still contradict each other for every exponent
+larger than $3$. More generally, within the method an analytic cost $K^e$ gives exactly the exponents larger
+than $e+1$. The bound is ineffective.
+\end{abstract}
+
+\maketitle
+\tableofcontents
+
+%% =====================================================================
+\section{Introduction}\label{sec:intro}
+
+\subsection{The result}
+The \emph{irrationality exponent} $\mu(\xi)$ of a real number $\xi$ is the infimum of the real numbers $\nu$ such
+that $|\xi-p/q|>q^{-\nu}$ for all integers $p$ and all sufficiently large integers $q$. It does not change when
+$\xi$ is multiplied by a nonzero rational number. For irrational $\xi$ Dirichlet's theorem gives
+$\mu(\xi)\ge2$.
+
+For a lattice $L\subset\C$ we write $g_2(L)=60\sum'\lambda^{-4}$ and $g_3(L)=140\sum'\lambda^{-6}$, the sums
+running over $\lambda\in L\setminus\{0\}$. These are the invariants of the Weierstrass function $\wp_L$, which
+satisfies $\wp_L'^2=4\wp_L^3-g_2(L)\wp_L-g_3(L)$.
+
+\begin{theorem}\label{thm:main}
+Let $L\subset\C$ be a lattice with $g_2(L),g_3(L)\in\Q$, and let $\omega\in L$ be real and nonzero. For every
+$\varepsilon>0$ there is an integer $q_0=q_0(\varepsilon,\omega)$ such that
+\[
+ \Bigl|\omega-\frac pq\Bigr|>q^{-3-\varepsilon}
+\]
+for all integers $p$ and all integers $q\ge q_0$. In particular $\omega$ is irrational and
+$2\le\mu(\omega)\le3$.
+\end{theorem}
+
+The curve $y^2=x^3+Ax+B$ with $A,B\in\C$ and $4A^3+27B^2\ne0$ is uniformized by the lattice $\Lambda$ with
+$g_2(\Lambda)=-4A$ and $g_3(\Lambda)=-4B$, through $x=\wp_\Lambda(z)$ and $y=\wp_\Lambda'(z)/2$
+\cite[Section~VI.5]{Silverman09}. The differential $dx/(2y)$ pulls back to $dz$, so its periods form
+$\Lambda$. A rational change of variables brings any curve over $\Q$ to this form, and this gives the following
+corollary (proved in Section~\ref{sec:proof}).
+
+\begin{corollary}\label{cor:curve}
+Let $E$ be an elliptic curve over $\Q$ and let $\eta$ be a nonzero invariant differential on $E$ defined over
+$\Q$. Every nonzero real period $\omega$ of $\eta$ satisfies $\mu(\omega)\le3$. For $E:y^2=x^3+Ax+B$ with
+$A,B\in\Q$ and $\eta=dx/(2y)$ the periods are the lattice $\Lambda$ with $g_2(\Lambda)=-4A$ and
+$g_3(\Lambda)=-4B$.
+\end{corollary}
+
+The curve may or may not have complex multiplication. The proof does not give $q_0(\varepsilon,\omega)$: the
+bound is ineffective. A formalization in Lean~4 is intended to follow. The use of AI in this work is disclosed at
+the end of the paper.
+
+\subsection{Background}\label{ssec:background}
+\emph{Rational approximation.} Roth proved that $\mu(\alpha)=2$ for every irrational algebraic number $\alpha$
+\cite{Roth55}. For transcendental numbers the exact value of $\mu$ is known in few cases.
+
+\emph{Elliptic periods.} Siegel proved that at least one of two basis periods of $\wp$ is transcendental when
+$g_2$ and $g_3$ are algebraic \cite{Siegel32}. Under complex multiplication this makes every nonzero period
+transcendental. Schneider proved that every nonzero period of such a $\wp$ is transcendental, with or without
+complex multiplication \cite{Schneider37}. He also proved that if $\tau$ and the modular invariant $j(\tau)$
+are both algebraic, then $\tau$ is imaginary quadratic \cite{Schneider37}. We use this second theorem in Remark~\ref{rem:noCM}. Both
+results, and their later history, are described in Waldschmidt's survey \cite[Section~3.1]{Waldschmidt08}.
+
+\emph{Measures.} Fel'dman gave measures of transcendence for the numbers in the theorems of Siegel and Schneider
+\cite{Feldman51,Feldman74}. Masser determined the linear relations among $1$, the periods, the quasi-periods and
+$2\pi i$ of one Weierstrass function, and he gave measures of linear independence for them \cite{Masser75}.
+Philippon and Waldschmidt proved effective lower bounds for linear forms in logarithms on commutative algebraic
+groups. They include the first such measures for elliptic logarithms that hold without complex multiplication
+\cite{PhilipponWaldschmidt88,PhilipponWaldschmidt89}. Hirata-Kohno and David refined these bounds
+\cite{HirataKohno90,HirataKohno91,David95}. As recorded in \cite[Section~4.3]{Waldschmidt08}, it follows from
+work of David, Hirata-Kohno and Gaudron that these nonvanishing linear forms are not Liouville numbers. So
+$\mu(\omega)$ is finite for every nonzero real period $\omega$, with an exponent that depends on the curve. We
+have not found a numerical value of such an exponent in the literature. For curves without complex
+multiplication, Theorem~\ref{thm:main} gives, to our knowledge, the first explicit bound, and it is uniform over
+all curves over $\Q$.
+
+\emph{Recent results.} Since September 2026 several results of exponent $2$ have appeared, some obtained with AI
+systems. In October 2026 OpenAI proved that $\mu(\pi)=2$, with a Lean formalization \cite{OpenAIPi2026}.
+Liu, Jiang and Zhang proved $\mu(\log r)=2$ for rational $r>0$, $r\ne1$ \cite{LiuJiangZhang26}.
+G.~V.~Chudnovsky proved $\mu(\varpi)=2$ for the lemniscate period
+$\varpi=2\int_0^1(1-t^4)^{-1/2}\,dt$ \cite{Chudnovsky26}. G.~V.~and D.~V.~Chudnovsky extended this to every
+nonzero real period of an elliptic curve over $\Q$ with complex multiplication, for an invariant differential
+defined over $\Q$. They also proved $\mu(\varpi^n)=O(n\log 2n)$ \CM. The paper \CM{} is a preprint. Its results
+that we use are stated exactly where they are used, in Theorem~\ref{thm:epa}, Lemma~\ref{lem:trunc} and
+Lemma~\ref{lem:collision}.
+
+\subsection{What the method needs without complex multiplication}\label{ssec:need}
+The proof of \CM{} works on $E\times\mathbb G_a^m$. It takes $m$ rational approximations $p_i/q_i$ to a real
+period $\omega$, and a set of $K$ periods $\gamma_j=\lambda_j\omega\in\Lambda$. The centres are the points
+$(\lambda_jp_1/q_1,\dots,\lambda_jp_m/q_m)$ of the additive factor. The determinant $\Delta$ is formed from the
+weighted jets of a space of polynomials at these centres. Three estimates are compared. An interpolation
+theorem with separated weights shows that $\Delta\ne0$. Clearing denominators
+gives a lower bound for $|\Delta|$, since $\lambda_j$ lies in an order of an imaginary quadratic field. An
+analytic upper bound comes from the periodicity of the elliptic coordinates and a collision estimate. The
+centres $\lambda_j$ run over a rectangle $\{a+bi\sqrt d\}$ in the order, so they lie in a disc of radius of order
+$\sqrt K$. The multiplier that clears the poles grows like $\exp(c|z|^2)$, and the analytic estimate costs a
+term of order $K/w_0$, where $w_0$ is the source weight of the elliptic coordinates. Apart from the
+irrationality of $\omega$, complex multiplication enters \CM{} only through this two-dimensional grid.
+
+\begin{remark}\label{rem:noCM}
+Let $\Lambda$ have algebraic invariants and no complex multiplication, and let $\Omega$ generate
+$\Lambda\cap\R$. If $\alpha$ is algebraic and $\alpha\Omega\in\Lambda$, then $\alpha\in\Z$. Indeed, write
+$\Lambda=\Z\Omega+\Z\Omega'$ and $\alpha\Omega=a\Omega+b\Omega'$. If $b\ne0$, then $\tau=\Omega'/\Omega$ is
+algebraic. Since $j(\tau)$ is algebraic, Schneider's theorem makes $\tau$ imaginary quadratic, and $\Lambda$ has
+complex multiplication. So $b=0$ and $\alpha=a$.
+\end{remark}
+
+So without complex multiplication the multipliers $\lambda_j$ must be integers. We take the centres
+$jp_i/q_i$ with $0\le j<K$. They lie on a line, at distance up to $K\Omega$ from the origin. The multiplier then costs a term of order $K^2/w_0$. The
+question is whether the parameters still close, and at which exponent.
+
+\subsection{New ideas}
+We keep the construction of \CM{} and its nonvanishing theorem. The proof rests on the following ideas.
+\begin{enumerate}[leftmargin=*]
+\item \emph{A one-dimensional real grid.} The periods $j\Omega$, $0\le j<K$, replace the two-dimensional grid of
+ complex multiplication, and the centres are $c_{ji}=jp_i/q_i$. These centres are distinct in each coordinate,
+ which is all that the nonvanishing theorem of \CM{} asks (Theorem~\ref{thm:epa}). The entries lie in $\Q$, and
+ the lower bound needs only $|n|\ge1$ for a nonzero integer $n$.
+\item \emph{The origin chart for every curve.} For $y^2=x^3+Ax+B$ with $A,B\in\Z$ we use the chart of \CM{} at
+ the origin, $u=1/(x-a)$, $t=y/(x-a)^2$, with any integer $a$ such that $a^3+Aa+B\ne0$. Its elliptic logarithm
+ has the denominators $n$ only. The whole arithmetic part of \CM{} uses nothing else. We give it over $\Z$
+ (Proposition~\ref{prop:arith}). No torsion point and no endomorphism enters.
+\item \emph{The periodised multiplier.} Let $\psi(z)=\sigma(z-z_Q)\sigma(z+z_Q)$ be the sigma-type multiplier of
+ \CM{} and let $\eta_\Omega$ be the quasi-period of $\Omega$. The function
+ $\tpsi(z)=\psi(z)\exp(-\eta_\Omega z^2/\Omega)$ is periodic with period $\Omega$. In the transport of the
+ determinant it removes the factor $\prod_j|\psi(j\Omega)|$, which is a Gaussian in $j$
+ (Lemma~\ref{lem:transport}). Legendre's relation gives its growth across the strip,
+ $\log|\tpsi(z)|\le c+\chi(|\operatorname{Im}z|+Y)^2$ for a constant $c$, with $\chi=2\pi/(\Omega Y)$ and $Y$ the
+ height of the period parallelogram (Lemma~\ref{lem:growth}).
+\item \emph{The analytic cost $K^2/w_0$ and the exponent $3$.} The collision estimate needs a disc around all
+ centres, of radius of order $K$. On it the multiplier costs a term $C_\Lambda K^2/(2w_0)$, with an explicit
+ constant $C_\Lambda$ of the lattice (Theorem~\ref{thm:analytic}). With explicit rational choices of all
+ parameters the comparison closes for every exponent $\nu>3$ (Section~\ref{sec:params}).
+\item \emph{The threshold $e+1$.} If the analytic cost is $K^e/w_0$, the parameters close exactly when
+ $\nu>e+1$ (Proposition~\ref{prop:threshold}). The case $e=1$ is the exponent $2$ of complex multiplication and
+ of $\pi$. The case $e=2$ is the exponent $3$ of this paper.
+\end{enumerate}
+
+\subsection{Constants, organization and notation}
+The exponent $3$ is the only constant in Theorem~\ref{thm:main}. The constants of the proof, such as
+$C_\Lambda$, depend on the lattice and do not enter the result.
+
+Section~\ref{sec:chart} reduces Theorem~\ref{thm:main} to an integral model and constructs the chart and the
+multiplier. Section~\ref{sec:det} defines the determinant and states the nonvanishing theorem.
+Sections~\ref{sec:arith} and~\ref{sec:analytic} prove the lower and upper bounds. Section~\ref{sec:params}
+chooses the parameters and Section~\ref{sec:proof} proves the theorem. Section~\ref{sec:three} explains why the
+exponent is $3$ and what would give $2$.
+
+Logarithms are natural, $\N$ contains $0$, and $\log^+x=\max(0,\log x)$. For a series $f$ in $T$ and
+$V=(V_1,\dots,V_m)$, $[T^sV^\beta]f$ is the coefficient of $T^s\prod_iV_i^{\beta_i}$. For
+$\alpha,\beta\in\N^m$ we write $\beta\le\alpha$ coordinatewise, $|\alpha|=\sum_i\alpha_i$ and
+$\binom\alpha\beta=\prod_i\binom{\alpha_i}{\beta_i}$, which is $0$ unless $\beta\le\alpha$.
+
+%% =====================================================================
+\section{The lattice, the origin chart and the multiplier}\label{sec:chart}
+
+\subsection{Reduction to an integral model}
+The first lemma replaces $L$ by a lattice whose curve has integer coefficients.
+
+\begin{lemma}\label{lem:integral}
+Let $L$ be a lattice with $g_2(L),g_3(L)\in\Q$. There is a positive integer $d$ such that $\Lambda=d^{-1}L$
+satisfies $g_2(\Lambda)=-4A$ and $g_3(\Lambda)=-4B$ with $A,B\in\Z$ and $4A^3+27B^2\ne0$. The functions
+$x=\wp_\Lambda$ and $y=\wp'_\Lambda/2$ satisfy $y^2=x^3+Ax+B$ and $dx/(2y)=dz$.
+\end{lemma}
+
+\begin{proof}
+For $c\in\C^\times$ one has $g_2(cL)=c^{-4}g_2(L)$ and $g_3(cL)=c^{-6}g_3(L)$. Let $s$ be a common denominator
+of $g_2(L)$ and $g_3(L)$ and put $d=2s$. Then $d^4g_2(L)/4$ and $d^6g_3(L)/4$ are integers, and we define
+$A=-d^4g_2(L)/4$ and $B=-d^6g_3(L)/4$. The discriminant $g_2^3-27g_3^2$ of a lattice is nonzero, and for
+$\Lambda$ it equals $-16(4A^3+27B^2)$. The differential equation of $\wp_\Lambda$ gives
+$y^2=\wp'^2_\Lambda/4=x^3+Ax+B$, and $dx/(2y)=\wp'_\Lambda\,dz/\wp'_\Lambda=dz$.
+\end{proof}
+
+A nonzero real $\omega\in L$ gives the nonzero real period $\omega/d\in\Lambda$. The group $\Lambda\cap\R$ is
+discrete and nonzero, so $\Lambda\cap\R=\Z\Omega$ for a unique $\Omega>0$. Thus $\omega/d=n\Omega$ with a
+nonzero integer $n$, and $\omega=N\Omega$ with $N=dn$. Integer multiples do not change the exponent, in the following form.
+
+\begin{lemma}\label{lem:scale}
+Let $N\ne0$ be an integer and $\nu'<\nu$. If infinitely many pairs $(p,q)$ with $q\ge1$ satisfy
+$|N\xi-p/q|\le q^{-\nu}$, then infinitely many pairs $(p',q')$ with $q'\ge1$ satisfy
+$|\xi-p'/q'|\le q'^{-\nu'}$.
+\end{lemma}
+
+\begin{proof}
+For bounded $q$ only finitely many $p$ satisfy the inequality, so the denominators $q$ are unbounded. Put
+$p'=p\operatorname{sgn}N$ and $q'=|N|q$. Then $|\xi-p'/q'|\le q^{-\nu}/|N|$. This is at most
+$(|N|q)^{-\nu'}$ as soon as $q^{\nu-\nu'}\ge|N|^{\nu'-1}$, which holds for all large $q$.
+\end{proof}
+
+From now on we fix $A,B\in\Z$ with $4A^3+27B^2\ne0$, the cubic $f(X)=X^3+AX+B$, the lattice $\Lambda$ of
+Lemma~\ref{lem:integral} and the generator $\Omega>0$ of $\Lambda\cap\R$. We choose $\Omega'\in\Lambda$ with
+$\Lambda=\Z\Omega+\Z\Omega'$ and $Y=\operatorname{Im}\Omega'>0$.
+
+\subsection{The origin chart}
+This chart is the one of \CM. Fix an integer $a$ with $f(a)\ne0$. One of $0,1,2,3$ will do, since a cubic has at
+most three roots. Put
+\[
+ u=\frac1{x-a},\qquad t=\frac y{(x-a)^2}.
+\]
+Multiplying $y^2=f(x)$ by $u^4$ gives
+\begin{equation}\label{eq:quartic}
+ t^2=F(u),\qquad F(U)=U+3aU^2+(3a^2+A)U^3+f(a)U^4\in\Z[U].
+\end{equation}
+The decisive facts are $F(0)=0$ and $F'(0)=1$.
+
+\begin{proposition}[{\cite[Proposition~3.1]{ChudnovskyChudnovsky26}}]\label{prop:chart}
+There is a unique $U(T)\in\Z[[T]]$ with $U(0)=0$ and $F(U(T))=T^2$. The series $-1/F'(U(T))$ lies in $\Z[[T]]$.
+The series $L(T)\in\Q[[T]]$ with $L(0)=0$ and $L'(T)=-1/F'(U(T))$ satisfies $n[T^n]L\in\Z$ for $n\ge1$.
+\end{proposition}
+
+\begin{proof}
+The linear coefficient of $F$ is $1$, so $F$ has a compositional inverse $G\in\Z[[S]]$ with $G(0)=0$. Put
+$U(T)=G(T^2)$. Any solution $W$ with $W(0)=0$ satisfies $W=G(F(W))=G(T^2)$, which gives uniqueness. The
+constant term of $F'(U(T))$ is $1$, so its inverse lies in $\Z[[T]]$. If $-1/F'(U(T))=\sum_kv_kT^k$, then
+$[T^n]L=v_{n-1}/n$.
+\end{proof}
+
+Next we relate the chart to the uniformization. The function $u=1/(\wp_\Lambda-a)$ vanishes at the points of
+$\Lambda$. Let $Q=(a,y_Q)$ be a point of the curve with $x(Q)=a$, and let $z_Q$ be an elliptic logarithm of $Q$.
+Since $y_Q^2=f(a)\ne0$, the point $Q$ is not of order $2$, so the cosets $z_Q+\Lambda$ and $-z_Q+\Lambda$ are
+distinct and $\wp'_\Lambda(z_Q)\ne0$. Hence $u$ has simple poles exactly at $\pm z_Q+\Lambda$. The function
+$t=\tfrac12\wp'_\Lambda u^2$ has double poles there. At $z=0$ the triple pole of $\wp'_\Lambda$ meets the
+zero of order four of $u^2$, so $t$ vanishes at the points of $\Lambda$ and has no other poles.
+
+\begin{proposition}[{\cite[Proposition~3.3]{ChudnovskyChudnovsky26}}]\label{prop:germ}
+Write $\tau(z)=t(z)$ near $z=0$. Then $\tau'(0)=-1$, and as convergent germs at $z=0$
+\[
+ u(z)=U(\tau(z)),\qquad L(\tau(z))=z.
+\]
+\end{proposition}
+
+\begin{proof}
+Near $0$ one has $\wp_\Lambda=z^{-2}+O(z^2)$ and $\wp'_\Lambda=-2z^{-3}+O(z)$. So $u=z^2+O(z^4)$ and
+$t=-z+O(z^3)$. Thus $\tau$ is a local coordinate, and $u=W(\tau)$ for a convergent series $W$ with $W(0)=0$.
+The identity $t^2=F(u)$ gives $F(W(T))=T^2$, and Proposition~\ref{prop:chart} gives $W=U$. From
+$x=a+1/u$ and $y=t/u^2$ we get $dz=dx/(2y)=-du/(2t)$. Differentiating $t^2=F(u)$ gives $2t\,dt=F'(u)\,du$,
+hence $dz=-dt/F'(u)=L'(\tau)\,d\tau$. Both $z$ and $L(\tau(z))$ vanish at $0$, so they are equal.
+\end{proof}
+
+\subsection{The periodised multiplier}
+Let $\sigma$ be the Weierstrass sigma function of $\Lambda$. We use the classical
+facts in the form of \cite[Section~23.2]{DLMF}. The function $\sigma$ is entire with simple zeros exactly on
+$\Lambda$. For $\lambda\in\Lambda$ there are $\varepsilon_\lambda\in\{\pm1\}$ and $\eta_\lambda\in\C$ with
+\begin{equation}\label{eq:quasi}
+ \sigma(z+\lambda)=\varepsilon_\lambda e^{\eta_\lambda(z+\lambda/2)}\sigma(z),
+\end{equation}
+and $\lambda\mapsto\eta_\lambda$ is additive. Legendre's relation reads
+\begin{equation}\label{eq:legendre}
+ \eta_\Omega\Omega'-\eta_{\Omega'}\Omega=2\pi i.
+\end{equation}
+In the notation of \cite{DLMF}, $\Omega=2\omega_1$, $\Omega'=2\omega_3$, $\eta_\Omega=2\eta_1$ and
+$\eta_{\Omega'}=2\eta_3$. Then \eqref{eq:quasi} is (23.2.17) and \eqref{eq:legendre} is four times (23.2.14).
+
+Put
+\[
+ \psi(z)=\sigma(z-z_Q)\,\sigma(z+z_Q),\qquad \tpsi(z)=\psi(z)\exp\Bigl(-\frac{\eta_\Omega}{\Omega}z^2\Bigr).
+\]
+The function $\psi$ is the multiplier of \CM. The factor $\exp(-\eta_\Omega z^2/\Omega)$ is new.
+
+\begin{lemma}\label{lem:mult}
+\begin{enumerate}[label=(\alph*)]
+\item $\psi(z+\lambda)=e^{\eta_\lambda(2z+\lambda)}\psi(z)$ for $\lambda\in\Lambda$, and
+ $\tpsi(z+\Omega)=\tpsi(z)$.
+\item $\tpsi(z+n\Omega')=\tpsi(z)\exp\bigl(-\tfrac{2\pi i}{\Omega}(2nz+n^2\Omega')\bigr)$ for $n\in\Z$.
+\item The functions $\tpsi$, $\tpsi u$ and $\tpsi^2t$ are entire, and $\tpsi(0)=\psi(0)=-\sigma(z_Q)^2\ne0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Apply \eqref{eq:quasi} at $z-z_Q$ and $z+z_Q$. The signs give $\varepsilon_\lambda^2=1$ and the exponents add
+to $\eta_\lambda(2z+\lambda)$. For $\lambda=\Omega$ the exponential factor of $\tpsi$ changes by
+$\exp(-\eta_\Omega(2z+\Omega))$, which cancels.
+
+(b) With $\lambda=n\Omega'$ the exponent becomes
+$(n\eta_{\Omega'}-n\eta_\Omega\Omega'/\Omega)(2z+n\Omega')$. By \eqref{eq:legendre} the first factor is
+$-2\pi in/\Omega$.
+
+(c) The zeros of $\psi$ are simple and lie exactly on $\pm z_Q+\Lambda$. They cancel the simple poles of $u$ and
+the double poles of $t$. Finally $z_Q\notin\Lambda$ and $\sigma$ is odd.
+\end{proof}
+
+For integers $D\ge1$ and $k,b\ge0$ with $k+2b\le D$ put
+\[
+ \tg_{D,k,b}=\tpsi^{D}u^kt^b=\tpsi^{D-k-2b}(\tpsi u)^k(\tpsi^2t)^b.
+\]
+It is entire and $\Omega$-periodic. Let $S_*\ge1$ be the maximum of $1$ and the suprema of $|\tpsi|$,
+$|\tpsi u|$ and $|\tpsi^2t|$ on the rectangle $\{x+iy:0\le x\le\Omega,\ 0\le y\le Y\}$. Put
+\[
+ \chi=\frac{2\pi}{\Omega Y}.
+\]
+
+\begin{lemma}\label{lem:growth}
+For all $z\in\C$ and all admissible $(D,k,b)$,
+\[
+ |\tg_{D,k,b}(z)|\le S_*^D\exp\bigl(D\chi(|\operatorname{Im}z|+Y)^2\bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Write $z=z_1+n\Omega'+l\Omega$ with $n,l\in\Z$, $0\le\operatorname{Re}z_1<\Omega$ and
+$0\le y_1=\operatorname{Im}z_1<Y$. The functions $u,t$ are $\Lambda$-periodic and $\tpsi$ is
+$\Omega$-periodic. By Lemma~\ref{lem:mult}(b), each of $\tpsi$ and $\tpsi u$ is multiplied by a factor of
+modulus $\exp(\tfrac{2\pi}\Omega(2ny_1+n^2Y))$ in passing from $z_1$ to $z$, and $\tpsi^2t$ by its square. The
+product defining $\tg_{D,k,b}$ therefore acquires this factor to the power $(D-k-2b)+k+2b=D$. At $z_1$ the
+product has $D-b\le D$ factors, each bounded by $S_*$.
+
+It remains to bound $2ny_1+n^2Y$ by $Y^{-1}(|y|+Y)^2$, where $y=\operatorname{Im}z=y_1+nY$. If $n\ge0$, then
+$2ny_1+n^2Y\le(n+1)^2Y$ and $(n+1)Y\le y+Y$. If $n<0$, then $2ny_1+n^2Y\le n^2Y$, and
+$|n|Y=y_1-y<Y+|y|$. In both cases the factor is at most $\exp(\chi(|y|+Y)^2)$.
+\end{proof}
+
+%% =====================================================================
+\section{The interpolation determinant}\label{sec:det}
+
+This section sets up the determinant of \CM{} for the one-dimensional grid, and states its nonvanishing.
+
+\subsection{Weights, rows and columns}
+Fix integers $m,K\ge1$, positive rationals $w_0,v_0$ and $\theta\in(0,1)$, and a cutoff $H>0$. Fix integers
+$p_i\ne0$ and $q_i\ge2$ for $1\le i\le m$, and put $w_i=\lceil\log q_i\rceil$ and $W(\beta)=\sum_iw_i\beta_i$
+for $\beta\in\N^m$. The target monomials and their number are
+\[
+ \cJ_H=\{(s,\beta)\in\N^{1+m}:v_0s+W(\beta)/\theta<H\},\qquad J_H=|\cJ_H|,\qquad M=KJ_H.
+\]
+The source space is
+\[
+ \cF_H=\operatorname{span}_\C\{u^kt^bZ^\alpha:\ k\in\N,\ b\in\{0,1\},\ \alpha\in\N^m,\
+ 2w_0(k+2b)+W(\alpha)\le H\}.
+\]
+The centres are
+\[
+ c_{ji}=j\,\frac{p_i}{q_i}\qquad(0\le j<K,\ 1\le i\le m).
+\]
+For each $i$ they are distinct as $j$ varies, since $p_i\ne0$. For $P\in\cF_H$, centre $j$ and
+$(s,\beta)\in\cJ_H$, the coefficient
+\begin{equation}\label{eq:packet}
+ [T^sV^\beta]\,P\bigl(U(T),T,c_{j1}+V_1+L(T),\dots,c_{jm}+V_m+L(T)\bigr)
+\end{equation}
+is the $(s,\beta)$-jet of $P$ at the centre $j$, read in the chart of Proposition~\ref{prop:chart}. Choose $M$
+monomials $P_c=u^{k_c}t^{b_c}Z^{\alpha_c}$ of $\cF_H$, so that
+\begin{equation*}
+ b_c\in\{0,1\},\qquad 2w_0(k_c+2b_c)+W(\alpha_c)\le H.\tag{S}\label{eq:S}
+\end{equation*}
+The matrix $A$ has rows $r=(j,s,\beta)$ with $0\le j<K$ and $(s,\beta)\in\cJ_H$, and columns $c$. Its entries
+are the coefficients \eqref{eq:packet} for $P=P_c$. Taylor expansion in $V$ gives
+\begin{equation}\label{eq:entry}
+ A_{(j,s,\beta),c}=\binom{\alpha_c}{\beta}[T^s]\Bigl(U(T)^{k_c}T^{b_c}\prod_i\bigl(c_{ji}+L(T)\bigr)^{
+ \alpha_{ci}-\beta_i}\Bigr).
+\end{equation}
+We write $\Delta=\det A$ and
+\[
+ \bb=\frac1{MH}\sum_{(j,s,\beta)}W(\beta).
+\]
+The target cutoff gives $W(\beta)<\theta H$ for every row, so $0\le\bb<\theta$.
+
+\subsection{Nonvanishing}
+The nonvanishing theorem of \CM{} is a separated-weight interpolation theorem in the chart at the origin. We
+state it as it is proved there. For $n\in\N$ and $s>0$ put
+\[
+ A_n(s)=2(n+2)^{n+2}\Bigl(1+\frac{n+2}s\Bigr)^{n+2}.
+\]
+
+\begin{theorem}[{\cite[Corollary~13.5]{ChudnovskyChudnovsky26}}]\label{thm:epa}
+Let $A,B,a$ be integers with $4A^3+27B^2\ne0$ and $f(a)\ne0$. Let $m,K\ge1$ and let $w_0,v_0,\theta$ be
+positive rationals with
+\begin{equation}\label{eq:epa-base}
+ \theta<1,\qquad K\frac{w_0}{v_0}\theta^m<1,\qquad K\theta^m<1.
+\end{equation}
+Choose a rational $\sigma_0>0$ with
+\[
+ (1+3\sigma_0)^{m+1}K\frac{w_0}{v_0}\theta^m<1,\qquad(1+3\sigma_0)^mK\theta^m<1,\qquad(1+\sigma_0)\theta<1.
+\]
+Put $\varepsilon_0=\min\{\sigma_0,\sigma_0v_0/(4(1+\sigma_0)w_0)\}$,
+$C_4=A_m(\sigma_0)+4\cdot2^{m+3}A_{m+1}(\varepsilon_0)$ and $q_*=\theta^m\min(1,w_0)/\max(1,v_0)$. Let
+$w_1,\dots,w_m$ be positive rationals with
+\begin{equation}\label{eq:epa-thresholds}
+ w_i>\max\Bigl\{1,\frac{C_4}{q_*}\prod_{1\le l<i}w_l\Bigr\}\qquad(1\le i\le m).
+\end{equation}
+There is a positive integer $D_{\mathrm{EPA}}$, depending on these data but not on any centres, with the
+following property. For every array $(c_{ji})\in\C^{K\times m}$ such that $j\mapsto c_{ji}$ is injective for
+each $i$, there is $H_0$ such that for every integer $H\ge H_0$ divisible by $D_{\mathrm{EPA}}$ the map from
+$\cF_H$ to $\prod_j\C^{\cJ_H}$ given by the coefficients \eqref{eq:packet} is surjective.
+\end{theorem}
+
+The theorem is stated in \CM{} for every curve $y^2=x^3+Ax+B$ with $A,B\in\Z$ and $4A^3+27B^2\ne0$, and for
+every array whose coordinates are injective in $j$. Its proof, in \cite[Sections~4--13]{ChudnovskyChudnovsky26},
+uses the elliptic curve through four facts only. The quartic $F$ is squarefree, which follows from
+$4A^3+27B^2\ne0$. Its leading coefficient $f(a)$ is nonzero. The differential $dx/(2y)$ has no algebraic
+primitive on any finite cover. Finally $F'(0)=1$. None of these uses an endomorphism. The centres enter through
+the injectivity of each coordinate, and in one place through their distinctness as points of $\C^m$. Complex
+multiplication is mentioned in those sections only to fix the curve. So Theorem~\ref{thm:epa} applies to every
+curve and to the collinear centres $jp_i/q_i$.
+
+\begin{remark}\label{rem:line}
+The collinear centres do impose a condition, which the thresholds already contain. They lie on the line
+$u=t=0$, $Z_i=\lambda p_i/q_i$. Its pole divisor has degree $1/w_1$ in the weighted sense of \CM, and it meets
+each of the $K$ centres with contact $\theta/w_m$. The curve inequality behind Theorem~\ref{thm:epa} therefore
+contains $(1+\sigma_0)K\theta\le w_m/w_1$. For $m\ge2$ this follows from \eqref{eq:epa-thresholds}, since
+$w_m/w_1>C_4/q_*\ge\theta^{-m}>K>(1+\sigma_0)K\theta$. For $m=1$ it follows from the condition
+$(1+3\sigma_0)K\theta<1$ on $\sigma_0$.
+\end{remark}
+
+If the coefficient map is surjective, the matrix with all $M$ rows and with the columns indexed by all
+monomials of $\cF_H$ has rank $M$. Some choice of $M$ columns then gives $\Delta\ne0$. These columns satisfy
+\eqref{eq:S}.
+
+%% =====================================================================
+\section{The arithmetic lower bound}\label{sec:arith}
+
+The entries \eqref{eq:entry} contain the full logarithm $L$, whose coefficients of high order have large
+denominators. The first lemma shows that a fixed truncation of $L$ leaves $\Delta$ unchanged.
+
+Weight the monomial $T^sV^\beta$ by $v_0s+W(\beta)/\theta$. Let $\fa_H$ be the closed ideal of $\C[[T,V]]$
+spanned by the monomials of weight at least $H$. The quotient $\C[[T,V]]/\fa_H$ has the basis $\cJ_H$.
+
+\begin{lemma}[{\cite[Lemma~15.1]{ChudnovskyChudnovsky26}}]\label{lem:trunc}
+Let $T_1,\dots,T_m$ be positive integers with $T_iv_0\ge w_i/\theta$, and let $L_i^{\rm tr}$ be the sum of the
+terms of $L$ of degree less than $T_i$. Let $A^{\rm tr}$ be the matrix \eqref{eq:entry} with $L$ replaced by
+$L_i^{\rm tr}$ in the factor with index $i$. Then $\det A^{\rm tr}=\det A$ for every choice of the columns.
+\end{lemma}
+
+\begin{proof}
+Put $R_i=L-L_i^{\rm tr}$ and let $\Phi$ be the substitution $V_i\mapsto V_i+R_i(T)$. Every term of $R_i$ has
+degree at least $T_i$, so its weight is at least $T_iv_0\ge w_i/\theta$, the weight of $V_i$. Hence $\Phi$ and
+its inverse $V_i\mapsto V_i-R_i(T)$ do not decrease weight. They preserve $\fa_H$ and induce inverse linear maps
+of $\C[[T,V]]/\fa_H$. The map $\Phi$ carries the truncated evaluation at each centre to the full one. Order the
+basis $\cJ_H$ by $|\beta|$. The image of $T^sV^\beta$ is $T^sV^\beta$ plus terms of smaller $|\beta|$, so the
+matrix of $\Phi$ is unitriangular. Thus each centre block of $A$ is a matrix of determinant $1$ times the
+corresponding block of $A^{\rm tr}$.
+\end{proof}
+
+\begin{proposition}\label{prop:arith}
+Let $F_0\ge1/\theta$ and suppose $\Delta\ne0$. Then
+\[
+ \frac{\log|\Delta|}{MH}\ge-(1-\bb)-\Ear,\qquad \Ear=\frac{c_0F_0}{v_0},\qquad c_0=1.03883.
+\]
+\end{proposition}
+
+This is \cite[Lemma~15.2 and Corollary~15.3]{ChudnovskyChudnovsky26} with $\Z$ in place of the order
+$\Z[i\sqrt d]$, and with the constant of Rosser and Schoenfeld in place of $\log4+4$. We give the proof.
+
+\begin{proof}
+Put $T_i=\lceil F_0w_i/v_0\rceil$ and $\ell_i=\lcm(1,\dots,T_i-1)$, with $\ell_i=1$ if $T_i\le2$. Then
+$T_iv_0\ge F_0w_i\ge w_i/\theta$, so Lemma~\ref{lem:trunc} gives $\Delta=\det A^{\rm tr}$. By
+Proposition~\ref{prop:chart}, $U\in\Z[[T]]$ and $\ell_iL_i^{\rm tr}\in\Z[T]$. Hence
+\[
+ q_i\ell_i\Bigl(j\frac{p_i}{q_i}+L_i^{\rm tr}\Bigr)=\ell_ijp_i+q_i\ell_iL_i^{\rm tr}\in\Z[T].
+\]
+By \eqref{eq:entry}, $\prod_i(q_i\ell_i)^{\alpha_{ci}-\beta_{ri}}A^{\rm tr}_{rc}$ is an integer whenever
+$\beta_r\le\alpha_c$, and $A^{\rm tr}_{rc}=0$ otherwise.
+
+Put $d_i=\sum_c\alpha_{ci}-\sum_r\beta_{ri}$. Since $\Delta\ne0$, some permutation $\varphi$ of the Leibniz
+expansion gives a nonzero product. Then $\beta_r\le\alpha_{\varphi(r)}$ for all $r$, and
+$d_i=\sum_r(\alpha_{\varphi(r)i}-\beta_{ri})\ge0$. The same identity holds for every permutation. So
+$\Delta\prod_i(q_i\ell_i)^{d_i}$ is a sum of integers. It is a nonzero integer, and
+\[
+ \log|\Delta|\ge-\sum_id_i(\log q_i+\log\ell_i).
+\]
+Now $\log q_i\le w_i$. The number $\log\lcm(1,\dots,n)$ is Chebyshev's function at $n$, and Rosser and
+Schoenfeld proved that it is less than $c_0n$ for $n\ge1$ \cite[Theorem~12]{RosserSchoenfeld62}. Hence
+$\log\ell_i\le c_0(T_i-1)<c_0F_0w_i/v_0$. By \eqref{eq:S},
+$\sum_iw_id_i=\sum_cW(\alpha_c)-\sum_rW(\beta_r)\le MH(1-\bb)$. Therefore
+\[
+ \log|\Delta|\ge-MH(1-\bb)\Bigl(1+\frac{c_0F_0}{v_0}\Bigr)\ge-MH\bigl((1-\bb)+\Ear\bigr).\qedhere
+\]
+\end{proof}
+
+The error $\Ear$ depends on $F_0$ and $v_0$ only. It does not involve $K$ or the grid.
+
+%% =====================================================================
+\section{The analytic upper bound}\label{sec:analytic}
+
+The upper bound follows \cite[Section~16]{ChudnovskyChudnovsky26}. The grid enters at two places: the transport
+of the determinant uses $j\Omega\in\Lambda$, and the collision estimate uses a disc containing all centres. Put
+\[
+ D=\Bigl\lceil\frac H{2w_0}\Bigr\rceil,\qquad \delta_{ji}=c_{ji}-j\Omega=j\Bigl(\frac{p_i}{q_i}-\Omega\Bigr).
+\]
+By \eqref{eq:S}, $k_c+2b_c\le D$ for every column.
+
+\subsection{Transport}
+
+\begin{lemma}\label{lem:transport}
+Let $\tA$ be the matrix with entries
+\[
+ \tA_{(j,s,\beta),c}=[z^s]\,\tg_{D,k_c,b_c}(j\Omega+z)\binom{\alpha_c}\beta\prod_i
+ \bigl(j\Omega+z+\delta_{ji}\bigr)^{\alpha_{ci}-\beta_i}.
+\]
+Then $|\det\tA|=|\Delta|\,|\psi(0)|^{DJ_HK}$.
+\end{lemma}
+
+\begin{proof}
+Fix a centre $j$ and fix $\beta$. The set of $s$ with $(s,\beta)\in\cJ_H$ is an initial segment of $\N$.
+Substitute $T=\tau(z)$ in the series \eqref{eq:packet}. The coefficient of $z^sV^\beta$ is a combination of the
+coefficients of $T^{s'}V^\beta$ with $s'\le s$, with diagonal coefficient $\tau'(0)^s=(-1)^s$. This is a row
+operation of determinant $\pm1$ on the block of $j$.
+
+By Proposition~\ref{prop:germ} the substituted series is
+$u(z)^{k}t(z)^{b}\prod_i(c_{ji}+V_i+z)^{\alpha_i}$. Since $j\Omega\in\Lambda$, the germs of $u$ and $t$ at
+$0$ and at $j\Omega$ agree. Also $c_{ji}+z=j\Omega+z+\delta_{ji}$. Taking the coefficient of $V^\beta$ gives
+$u(j\Omega+z)^kt(j\Omega+z)^b\binom\alpha\beta\prod_i(j\Omega+z+\delta_{ji})^{\alpha_i-\beta_i}$.
+
+Multiply this by $\tpsi(j\Omega+z)^D=\tpsi(z)^D$, which is a series with constant term $\psi(0)^D$. On the
+coefficients of $z^s$ this is again lower triangular, with diagonal $\psi(0)^D$. Over the block of $j$ it
+multiplies the determinant by $\psi(0)^{DJ_H}$. The product is
+$\tg_{D,k,b}(j\Omega+z)\binom\alpha\beta\prod_i(j\Omega+z+\delta_{ji})^{\alpha_i-\beta_i}$. The $K$ blocks
+give the identity.
+\end{proof}
+
+The corresponding identity of \cite[Lemma~16.1]{ChudnovskyChudnovsky26} has the factor
+$\prod_j|\psi(\gamma_j)|^{DJ_H}$. For $\gamma_j=j\Omega$, Lemma~\ref{lem:mult}(a) gives $\psi(j\Omega)=e^{j^2\eta_\Omega\Omega}\psi(0)$. The periodised multiplier
+removes this Gaussian in $j$.
+
+\subsection{Expansion in the displacements}
+Let $\cT_H=\{\xi\in\N^m:W(\xi)\le H\}$. For a column $c$ and $\xi\in\cT_H$ define the entire function
+\[
+ G_{c,\xi}(\zeta)=\binom{\alpha_c}\xi\,\tg_{D,k_c,b_c}(\zeta)\,\zeta^{|\alpha_c|-|\xi|},
+\]
+which is $0$ unless $\xi\le\alpha_c$. For a row with centre $j$ and transverse index $\beta$ put
+$s(\beta,\xi,j)=\binom\xi\beta\prod_i\delta_{ji}^{\xi_i-\beta_i}$. The identity
+\[
+ \binom{\alpha_i}{\beta_i}(\zeta+\delta)^{\alpha_i-\beta_i}
+ =\sum_{\beta_i\le\xi_i\le\alpha_i}\binom{\xi_i}{\beta_i}\delta^{\xi_i-\beta_i}\binom{\alpha_i}{\xi_i}
+ \zeta^{\alpha_i-\xi_i}
+\]
+with $\zeta=j\Omega+z$ expresses each row of $\tA$ as a combination of rows of entire functions. Since
+$W(\alpha_c)\le H$, only $\xi\in\cT_H$ occur. Multilinearity in the rows gives the finite identity
+\begin{equation}\label{eq:tags}
+ \det\tA=\sum_{g}\Bigl(\prod_rs(\beta_r,g(r),j(r))\Bigr)\det B_g,
+\end{equation}
+over all maps $g$ from the rows to $\cT_H$, where $(B_g)_{r,c}=[z^{s_r}]\,G_{c,g(r)}(j(r)\Omega+z)$ and
+$r=(j(r),s_r,\beta_r)$.
+
+\subsection{Collision}
+The next lemma is the collision estimate of \CM. It uses only that the same entire functions are expanded at all
+the centres, and that the centres lie in a disc of half the radius.
+
+\begin{lemma}[{\cite[Lemma~16.2]{ChudnovskyChudnovsky26}}]\label{lem:collision}
+Let $R>0$ with $(K-1)\Omega+1\le R/2$, and suppose $|G_{c,\xi}(\zeta)|\le e^{H\cG}$ for $|\zeta|\le R$ and all
+$c,\xi$. For a map $g$ put $n_\xi=|g^{-1}(\xi)|$. Let $\kappa=(\log2)/4$, $s_0=2^{-1/2}$ and
+$\rho_H=(\log M+\kappa-\log(1-s_0))/H$. Then
+\[
+ |\det B_g|\le\exp\Bigl(-\kappa\sum_\xi n_\xi^2+MH(\cG+\rho_H)\Bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Put $a_{c,\xi,l}=R^l[\zeta^l]G_{c,\xi}$, so $|a_{c,\xi,l}|\le e^{H\cG}$ by Cauchy's inequality. Put
+$b_{r,l}=[z^{s_r}]((j(r)\Omega+z)/R)^l$. Cauchy's inequality on $|z|=1$ gives
+$|b_{r,l}|\le((j(r)\Omega+1)/R)^l\le2^{-l}$. So
+$(B_g)_{r,c}=\sum_{l\ge0}b_{r,l}a_{c,g(r),l}$, with absolute convergence. Expanding the determinant by
+multilinearity in the rows,
+\[
+ \det B_g=\sum_{(l_r)}\Bigl(\prod_rb_{r,l_r}\Bigr)\det\bigl[a_{c,g(r),l_r}\bigr]_{r,c}.
+\]
+Two rows with equal pairs $(g(r),l_r)$ are equal, so the determinant vanishes. In a surviving term the $l_r$ are
+distinct within each class $g^{-1}(\xi)$, and $\sum_rl_r\ge\sum_\xi\binom{n_\xi}2$. Each coefficient
+determinant is at most $M!\,e^{MH\cG}$. Write $2^{-\sum l_r}=s_0^{\sum l_r}s_0^{\sum l_r}$. Bound the first
+factor by $s_0^{\sum_\xi\binom{n_\xi}2}$ and sum the second over all $(l_r)$. This gives
+\[
+ |\det B_g|\le M!\,e^{MH\cG}s_0^{\sum_\xi\binom{n_\xi}2}(1-s_0)^{-M}.
+\]
+Finally $M!\le M^M$, $\sum_\xi n_\xi=M$ and $\log s_0=-2\kappa$.
+\end{proof}
+
+\subsection{The estimate}
+Put
+\[
+ r_*=2(\Omega+1),\qquad C_\Lambda=\log S_*+\log^+\frac1{|\psi(0)|}+\chi(r_*+Y)^2.
+\]
+These constants depend only on $\Lambda$, $a$ and the choice of $z_Q$.
+
+\begin{theorem}\label{thm:analytic}
+Assume $\Delta\ne0$. Let $\nu\ge1$ with $|\Omega-p_i/q_i|\le q_i^{-\nu}$ for $1\le i\le m$, and let
+$0<w_{\min}\le\min_iw_i$. Fix $a_0,\gamma\in(0,1)$ and put
+\[
+ N_H=|\{\xi\in\N^m:W(\xi)\le a_0H\}|,\qquad c_H=\frac{\kappa\gamma^2M}{HN_H}.
+\]
+Then
+\[
+ \frac{\log|\Delta|}{MH}\le\Ean+e_H+\max\bigl\{-c_H,\ -\nu\bigl(a_0(1-\gamma)-\bb\bigr)\bigr\},
+\]
+where
+\[
+ \Ean=\frac{C_\Lambda K^2}{2w_0}+\frac{\nu+\log(4r_*K^2)}{w_{\min}},\qquad
+ e_H=\frac{C_\Lambda K^2}H+\rho_H+\frac{\log|\cT_H|}H.
+\]
+\end{theorem}
+
+\begin{proof}
+\emph{Displacements.} Since $\log q_i>w_i-1$, we have $|\delta_{ji}|\le Kq_i^{-\nu}\le\exp(C_\delta-\nu w_i)$
+with $C_\delta=\nu+\log K>0$. A nonzero $s(\beta,\xi,j)$ has $\beta\le\xi$, and $|\xi|\le H/w_{\min}$ for
+$\xi\in\cT_H$. Since $\binom\xi\beta\le2^{|\xi|}$,
+\begin{equation}\label{eq:disp}
+ |s(\beta,\xi,j)|\le\exp\Bigl(-\nu\bigl(W(\xi)-W(\beta)\bigr)+\frac{H(\log2+C_\delta)}{w_{\min}}\Bigr).
+\end{equation}
+
+\emph{The disc.} Take $R=r_*K$. Then $(K-1)\Omega+1\le(\Omega+1)K=R/2$. On $|\zeta|\le R$ we have
+$|\operatorname{Im}\zeta|\le R$ and $R+Y\le(r_*+Y)K$. Lemma~\ref{lem:growth}, $\binom{\alpha_c}\xi\le2^{|\alpha_c|}$
+and $|\alpha_c|\le H/w_{\min}$ give $|G_{c,\xi}|\le e^{H\cG}$ with
+\[
+ \cG=\frac DH\bigl(\log S_*+\chi(r_*+Y)^2K^2\bigr)+\frac{\log(2R)}{w_{\min}}.
+\]
+
+\emph{Two cases.} Consider a map $g$ whose scalar product in \eqref{eq:tags} is nonzero. Then
+$W(g(r))\ge W(\beta_r)$ for every row, so $\sum_rW(g(r))\ge MH\bb$. Suppose first that
+$\sum_rW(g(r))\ge a_0(1-\gamma)MH$. The product of the bounds \eqref{eq:disp} contains the factor
+$\exp(-\nu MH(a_0(1-\gamma)-\bb))$, and we use Lemma~\ref{lem:collision} without its first term. Otherwise
+more than $\gamma M$ rows have $W(g(r))\le a_0H$. Indeed, if at least $(1-\gamma)M$ rows had $W(g(r))>a_0H$,
+the sum would be at least $a_0(1-\gamma)MH$. These rows use at most $N_H$ values of $g$, so the
+Cauchy--Schwarz inequality gives $\sum_\xi n_\xi^2\ge\gamma^2M^2/N_H$. Lemma~\ref{lem:collision} then gives the
+factor $\exp(-c_HMH)$, and the factor $\exp(-\nu\sum_r(W(g(r))-W(\beta_r)))$ is at most $1$. There are
+$|\cT_H|^M$ maps $g$. Hence
+\[
+ \frac{\log|\det\tA|}{MH}\le\frac{\log2+C_\delta}{w_{\min}}+\cG+\rho_H+\frac{\log|\cT_H|}H
+ +\max\bigl\{-c_H,-\nu(a_0(1-\gamma)-\bb)\bigr\}.
+\]
+
+\emph{The multiplier.} By Lemma~\ref{lem:transport} and $MH=KJ_HH$,
+\[
+ \frac{\log|\Delta|}{MH}\le\frac{\log|\det\tA|}{MH}+\frac DH\log^+\frac1{|\psi(0)|}.
+\]
+The terms with the factor $D/H$ add up to at most $(D/H)C_\Lambda K^2$, since $K\ge1$. Moreover
+$D/H\le1/(2w_0)+1/H$. Finally $\log2+C_\delta+\log(2R)=\nu+\log(4r_*K^2)$.
+\end{proof}
+
+\begin{corollary}[{\cite[Corollary~16.4]{ChudnovskyChudnovsky26}}]\label{cor:limits}
+With all data other than $H$ fixed, $e_H\to0$ and
+\[
+ c_H\to c_\infty=\frac{\kappa\gamma^2K\theta^m}{(m+1)v_0a_0^m}\qquad(H\to\infty).
+\]
+\end{corollary}
+
+\begin{proof}
+The number of points of $\N^n$ in the simplex $\{\sum_ia_ix_i<X\}$ is asymptotic to $X^n/(n!\prod_ia_i)$. Hence
+$J_H\sim\theta^mH^{m+1}/((m+1)!\,v_0\prod_iw_i)$ and $N_H\sim a_0^mH^m/(m!\prod_iw_i)$. This gives the limit
+of $c_H=\kappa\gamma^2KJ_H/(HN_H)$. The numbers $M$ and $|\cT_H|$ grow polynomially in $H$, so
+$e_H\to0$.
+\end{proof}
+
+%% =====================================================================
+\section{The parameters}\label{sec:params}
+
+In this section $\nu>3$ is rational. We choose the remaining parameters explicitly. Put
+\[
+ b=\frac56-\frac1{2\nu},\qquad h=\frac{\nu-3}{4\nu},\qquad\theta=1-h,
+\]
+\[
+ a_0=1-bh,\qquad\gamma=\frac{h(\nu-3)}{12\nu},\qquad F_0=\frac1\theta,
+\]
+and
+\[
+ g=\nu\bigl(a_0(1-\gamma)-\theta\bigr)-(1-\theta).
+\]
+
+\begin{lemma}\label{lem:abc}
+\begin{enumerate}[label=(\alph*)]
+\item $2/3<b<1-1/\nu$ and $0<h<1/4$. Hence $0<\theta<a_0<1$.
+\item $a_0^3<\theta^2$.
+\item $g\ge h(\nu-3)/12>0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) We have $3b-2=(\nu-3)/(2\nu)=2h>0$ and $1-1/\nu-b=(\nu-3)/(6\nu)>0$. Since $b<1$, $a_0>\theta$.
+
+(b) Expanding,
+$a_0^3-\theta^2=h\bigl((2-3b)+(3b^2-1)h-b^3h^2\bigr)$. With $2-3b=-2h$ the bracket equals
+$3(b^2-1)h-b^3h^2<0$.
+
+(c) We have $a_0-\theta=h(1-b)$ and $\nu(1-b)-1=(\nu-3)/6$. Hence
+$g=h(\nu-3)/6-\nu\gamma a_0\ge h(\nu-3)/6-\nu\gamma=h(\nu-3)/12$.
+\end{proof}
+
+By (b), $a_0^{3/2}<\theta$, that is, $a_0/\theta<a_0^{-1/2}$. Choose rationals $c_1,c_2$ with
+\[
+ \frac{a_0}\theta<c_1<a_0^{-1/2},\qquad a_0<c_2<\min\{c_1^{-2},\ c_1\theta\}.
+\]
+The second interval is not empty, because $c_1<a_0^{-1/2}$ means $a_0<c_1^{-2}$ and $c_1>a_0/\theta$ means
+$a_0<c_1\theta$. Also $c_1>1$ and $c_1\theta<a_0^{-1/2}\theta<a_0^{1/2}<1$. For integers $m\ge1$ put
+\begin{equation}\label{eq:choice}
+ K=\lfloor c_1^m\rfloor,\qquad w_0=c_2^{-m},\qquad v_0=4K\theta^mw_0.
+\end{equation}
+These are rational. Let $\Ear$ be as in Proposition~\ref{prop:arith} and $c_\infty$ as in
+Corollary~\ref{cor:limits}.
+
+\begin{proposition}\label{prop:params}
+As $m\to\infty$:
+\begin{enumerate}[label=(P\arabic*)]
+\item $K\theta^m\to0$;
+\item $K(w_0/v_0)\theta^m=1/4$ for every $m$;
+\item $K^2/w_0\to0$;
+\item $v_0\to\infty$, so $\Ear\to0$;
+\item $c_\infty\to\infty$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+For $c_1^m\ge2$ we have $c_1^m/2\le K\le c_1^m$. (P1) $K\theta^m\le(c_1\theta)^m$. (P2) is the definition of
+$v_0$. (P3) $K^2/w_0\le(c_1^2c_2)^m$ and $c_1^2c_2<1$. (P4) $v_0\ge2(c_1\theta/c_2)^m$ and $c_1\theta>c_2$.
+(P5) Substituting $v_0$, the factor $K$ cancels and
+$c_\infty=\kappa\gamma^2(c_2/a_0)^m/(4(m+1))$, with $c_2>a_0$.
+\end{proof}
+
+The factor $K$ cancels from $c_\infty$ because $v_0$ is proportional to $K$. This is why the analytic cost
+$K^2/w_0$ and the collision rate $c_\infty$ meet in the single condition $a_0^3<\theta^2$.
+
+%% =====================================================================
+\section{Proof of Theorem~\ref{thm:main} and Corollary~\ref{cor:curve}}\label{sec:proof}
+
+\begin{theorem}\label{thm:omega}
+For every $\nu>3$ there are only finitely many pairs $(p,q)$ of integers with $q\ge1$ and
+$|\Omega-p/q|\le q^{-\nu}$.
+\end{theorem}
+
+\begin{proof}
+Decreasing $\nu$ only enlarges the set of pairs, so we may assume $\nu$ rational. Suppose that infinitely many
+pairs satisfy the inequality. Their denominators are unbounded. Since $\Omega\ne0$, all but finitely many have
+$p\ne0$ and $q\ge2$. Take the parameters of Section~\ref{sec:params} and the constant $C_\Lambda$ of
+Theorem~\ref{thm:analytic}.
+
+\emph{Step 1.} By Proposition~\ref{prop:params} we may fix $m$ so large that \eqref{eq:epa-base} holds,
+$c_\infty>2$, and
+\[
+ \Ear+\frac{C_\Lambda K^2}{2w_0}<\min\Bigl(\frac g4,\frac14\Bigr).
+\]
+This fixes $K$, $w_0$, $v_0$ and $\theta$. Choose $\sigma_0$, $C_4$ and $q_*$ as in Theorem~\ref{thm:epa}.
+
+\emph{Step 2.} Choose pairs $(p_1,q_1),\dots,(p_m,q_m)$ from the given infinite set in turn. Each $w_i$ is to
+satisfy \eqref{eq:epa-thresholds}, which involves only $w_1,\dots,w_{i-1}$. Each is also to satisfy $w_i\ge w_*$,
+where
+\[
+ \frac{\nu+\log(4r_*K^2)}{w_*}<\min\Bigl(\frac g4,\frac14\Bigr).
+\]
+Unbounded denominators allow every choice. Put $w_{\min}=w_*$. Then $E=\Ear+\Ean<\min(g/2,1/2)$.
+
+\emph{Step 3.} Theorem~\ref{thm:epa} gives $D_{\mathrm{EPA}}$. The centres $c_{ji}=jp_i/q_i$ are injective in
+$j$ for each $i$, so there is $H_0$ such that for every $H\ge H_0$ divisible by $D_{\mathrm{EPA}}$ some choice
+of columns gives $\Delta_H\ne0$. Let $\bb_H\in[0,\theta)$ be the corresponding mean.
+
+\emph{Step 4.} Proposition~\ref{prop:arith} and Theorem~\ref{thm:analytic} apply to the same $\Delta_H$:
+\begin{align*}
+ \frac{\log|\Delta_H|}{MH}&\ge-(1-\bb_H)-\Ear,\\
+ \frac{\log|\Delta_H|}{MH}&\le\Ean+e_H+\max\bigl\{-c_H,-\nu(a_0(1-\gamma)-\bb_H)\bigr\}.
+\end{align*}
+If the maximum is $-c_H$, subtracting the lower bound from the upper bound gives
+$0\le E+e_H-c_H+1-\bb_H\le1+E+e_H-c_H$. By Corollary~\ref{cor:limits}, $e_H\to0$ and $c_H\to c_\infty>2$,
+while $E<1/2$. So the right side is negative for large $H$. In the other case the difference is
+\[
+ E+e_H-\bigl(\nu a_0(1-\gamma)-1-(\nu-1)\bb_H\bigr)\le E+e_H-g,
+\]
+because $\nu>1$ and $\bb_H<\theta$. Since $E<g/2$, this is negative for large $H$. Both cases are impossible
+for large $H$ divisible by $D_{\mathrm{EPA}}$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+By Lemma~\ref{lem:integral} and the remarks after it, $\omega=N\Omega$ with $N$ a nonzero integer, for the
+lattice $\Lambda=d^{-1}L$. Let $\varepsilon>0$. If infinitely many pairs satisfied
+$|\omega-p/q|\le q^{-3-\varepsilon}$, Lemma~\ref{lem:scale} with $\nu'=3+\varepsilon/2$ would contradict
+Theorem~\ref{thm:omega}. So the finitely many exceptions have bounded $q$, and $q_0$ exists. If $\omega$ were
+a rational $a/b$, the pairs $(na,nb)$ would give infinitely many exceptions. So $\omega$ is irrational, and
+Dirichlet's theorem gives $\mu(\omega)\ge2$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:curve}]
+Take a Weierstrass equation $y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6$ of $E$ over $\Q$. With
+$y_1=y+(a_1x+a_3)/2$ and $x_1=x+(a_2+a_1^2/4)/3$ it becomes $y_1^2=x_1^3+A_1x_1+B_1$ with $A_1,B_1\in\Q$, and
+$dx/(2y+a_1x+a_3)=dx_1/(2y_1)$. The invariant differentials defined over $\Q$ are the rational multiples of this
+differential, so $\eta=r\,dx_1/(2y_1)$ with $r\in\Q^\times$. By \cite[Section~VI.5]{Silverman09} the
+periods of $dx_1/(2y_1)$ form the lattice $\Lambda_1$ with $g_2(\Lambda_1)=-4A_1$ and $g_3(\Lambda_1)=-4B_1$. The
+periods of $\eta$ form $r\Lambda_1$, whose invariants $r^{-4}g_2(\Lambda_1)$ and $r^{-6}g_3(\Lambda_1)$ are
+rational. Theorem~\ref{thm:main} applies to $L=r\Lambda_1$.
+\end{proof}
+
+%% =====================================================================
+\section{Why the exponent is three}\label{sec:three}
+
+The exponent $3$ comes from the analytic term $C_\Lambda K^2/(2w_0)$. This section explains how that term
+determines the exponent, why it arises, and what would remove it.
+
+\subsection{The threshold for a cost of order \texorpdfstring{$K^e$}{K\textasciicircum e}}
+Suppose that the analytic estimate of Theorem~\ref{thm:analytic} held with $CK^e/w_0$ in place of
+$C_\Lambda K^2/(2w_0)$, for some $e\ge1$. Take $K=\lfloor c_1^m\rfloor$, $w_0=c_2^{-m}$ and
+$v_0=CK\theta^mw_0$ with fixed $c_1,c_2,C$, as in \eqref{eq:choice}. Up to the constant this choice of $v_0$ is the best
+one. The interpolation theorem needs $v_0>K\theta^mw_0$, and $c_\infty$ decreases as $v_0$ grows. The proof
+of Section~\ref{sec:proof} needs four rates. The analytic term must tend to $0$, which needs $c_1^ec_2\le1$. The
+collision rate $c_\infty$, proportional to $(c_2/a_0)^m/(m+1)$, must tend to infinity, which needs $c_2>a_0$.
+The arithmetic error $c_0F_0/v_0$ must stay small, which needs $v_0$ bounded below and so $c_1\theta\ge c_2$. Finally
+$g>0$ needs $\nu(a_0-\theta)>1-\theta$. The first three give $a_0<c_2\le\min(c_1^{-e},c_1\theta)$, hence
+$a_0/\theta<c_1<a_0^{-1/e}$ and
+\begin{equation}\label{eq:window}
+ a_0^{e+1}<\theta^e.
+\end{equation}
+
+\begin{proposition}\label{prop:threshold}
+Let $e\ge1$ be real and $\nu>1$. There are $0<\theta<a_0<1$ with $a_0^{e+1}<\theta^e$ and
+$\nu(a_0-\theta)>1-\theta$ if and only if $\nu>e+1$.
+\end{proposition}
+
+\begin{proof}
+Write $\theta=x^{e+1}$ with $0<x<1$. Condition \eqref{eq:window} says $a_0<x^e$. Since $1-\theta>0$, the
+second condition requires $a_0>\theta$ and $\nu>(1-\theta)/(a_0-\theta)$. For $\theta<a_0<x^e$,
+\[
+ \frac{1-\theta}{a_0-\theta}>r_e(x),\qquad r_e(x)=\frac{1-x^{e+1}}{x^e-x^{e+1}}.
+\]
+The function $k_e(x)=1-(e+1)x^e+ex^{e+1}$ vanishes at $x=1$, and $k_e'(x)=e(e+1)x^{e-1}(x-1)<0$ on
+$(0,1)$. So $k_e>0$ on $(0,1)$, which says $r_e(x)>e+1$. Hence both conditions force $\nu>e+1$.
+Conversely, let $\nu>e+1$. By l'H\^opital's rule $r_e(x)\to e+1$ as $x\to1$, so we can fix $x$ with
+$r_e(x)<\nu$. By continuity some $a_0$ slightly below $x^e$ satisfies both conditions.
+\end{proof}
+
+When \eqref{eq:window} holds, choose $c_1\in(a_0/\theta,a_0^{-1/e})$, $c_2\in(a_0,\min(c_1^{-e},c_1\theta))$
+and $\gamma$ small. Then all four rates hold strictly, as in Proposition~\ref{prop:params}. So within this family
+of parameters the exponent obtained is exactly $e+1$. For $e=1$ the window is $a_0^2<\theta$. This is the
+condition of \cite[Theorem~17.1]{ChudnovskyChudnovsky26} and of the proof for $\pi$ \cite{OpenAIPi2026}, and it
+gives the exponent $2$. For $e=2$ it is Lemma~\ref{lem:abc}(b), and it gives $3$.
+
+\subsection{The growth of the multiplier along the grid}
+The cost $K^2$ is a property of the disc. The collision estimate expands the same entire functions at all the
+centres, so it needs a disc of radius $R$ of order $K\Omega$ around the origin. On that disc the multiplier
+attains the growth $\exp(D\chi R^2)$ near $\pm iR$, by Lemma~\ref{lem:mult}(b). No other multiplier does
+better by more than a constant factor in the exponent.
+
+\begin{remark}\label{rem:jensen}
+Let $\Phi$ be entire with $\Phi(0)\ne0$, vanishing to order at least $D$ at every point of $\pm z_Q+\Lambda$.
+Such a function is needed to clear the poles of $u^D$. Let $n(r)$ count these points in $|z|<r$. Jensen's formula
+gives
+\[
+ \log\max_{|z|=R}|\Phi|\ge\log|\Phi(0)|+D\int_0^R\frac{n(r)}r\,dr.
+\]
+Comparing areas, $n(r)\ge2\pi r^2/(\Omega Y)-O(r+1)$. Hence
+$\log\max_{|z|=R}|\Phi|\ge\log|\Phi(0)|+D\pi R^2/(\Omega Y)-O(D(R+1))$. With $R$ of order $K$ and $D/H$ close to $1/(2w_0)$,
+any Cauchy estimate on the disc costs a term of order $K^2/w_0$.
+\end{remark}
+
+The entries of $\tA$ themselves are not large. By periodicity $\tg_{D,k,b}(j\Omega+z)=\tg_{D,k,b}(z)$, so
+the entries are bounded on the strip $|\operatorname{Im}z|\le1$ independently of $j$, up to the polynomial
+factors. The loss comes from bounding the Taylor coefficients at $0$ through the maximum on $|\zeta|=R$.
+
+\subsection{A collision estimate without that growth}
+Suppose the analytic estimate held with a cost $CK/w_0$, for a constant $C$ depending only on $\Lambda$. By
+Proposition~\ref{prop:threshold} with $e=1$, the proof of Section~\ref{sec:proof} would then give
+$\mu(\omega)=2$ for every nonzero real $\omega$ in every lattice with rational invariants. Such an estimate
+would have to separate the rows of different centres without expanding at a single point. The monomials
+$\zeta^l$ achieve this separation in Lemma~\ref{lem:collision}: rows of the same tag at different centres share
+a coefficient vector only when they share the exponent $l$. A basis adapted to the strip, on which translation by
+$\Omega$ acts diagonally, would keep the entries bounded. It would need a new counting argument for coincident
+rows. We do not know such an estimate.
+
+\subsection{Algebraic centres and norms}
+A two-dimensional grid of periods with algebraic multipliers is available only under complex multiplication,
+by Remark~\ref{rem:noCM}. Other algebraic centres bring a different loss. Suppose the cleared determinant is a
+nonzero algebraic integer of a number field $k$ of degree $n$. The lower bound then comes from
+$|N_{k/\Q}(\Delta)|\ge1$, and it needs upper bounds for all conjugates of $\Delta$. The conjugates are
+determinants at the conjugate centres, which are not close to periods. They obey only the trivial bound, without
+the collision or displacement gains. The arithmetic side then loses a factor of order $n$. Under complex
+multiplication with the rectangular grid, the only other embedding of $\Q(i\sqrt d)$ is complex conjugation,
+and $|a+bi\sqrt d|^2$ is a positive integer, so nothing is lost. For the powers $\varpi^n$ of the lemniscate
+period the natural centres involve $(p/q)^{1/n}$, of degree $n$. There G.~and D.~Chudnovsky use the norm from
+$\Q(i,(p/q)^{1/n})$ to $\Q(i)$, and they obtain $\mu(\varpi^n)=O(n\log2n)$ \cite[Theorem~18.1]{ChudnovskyChudnovsky26}.
+
+%% =====================================================================
+\section*{Disclosure of AI use}
+The mathematics and the text of this paper were produced by AI systems at the request of the author. The author
+posed the problem, directed the work and is responsible for the paper. The systems were Claude Opus~5.5, Claude
+Sonnet~5.5 and Claude Fable~5.2 (Anthropic), running in Claude Code. The construction, the nonvanishing theorem
+and the method of the proof are due to G.~V.~Chudnovsky and D.~V.~Chudnovsky \cite{Chudnovsky26,ChudnovskyChudnovsky26},
+building on OpenAI's proof for $\pi$ \cite{OpenAIPi2026}.
+
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{10}
+
+\bibitem{Chudnovsky26}
+Gregory~V. Chudnovsky, \emph{The irrationality exponent of the lemniscate
+  period: a determinant proof with a {L}ean 4 formalization}, 2026, Preprint,
+  19 October 2026, \href{https://arxiv.org/abs/2610.26539}{arXiv:2610.26539}.
+
+\bibitem{ChudnovskyChudnovsky26}
+Gregory~V. Chudnovsky and David~V. Chudnovsky, \emph{Irrationality exponents of
+  real {CM} elliptic periods and powers of the lemniscate period}, 2026,
+  Preprint, 22 October 2026,
+  \href{https://arxiv.org/abs/2610.31112}{arXiv:2610.31112}.
+
+\bibitem{David95}
+Sinnou David, \emph{Minorations de formes lin\'eaires de logarithmes
+  elliptiques}, M\'em. Soc. Math. France (N.S.) \textbf{62} (1995), 1--143.
+
+\bibitem{Feldman51}
+Naum~I. Fel'dman, \emph{The approximation of certain transcendental numbers.
+  {II}. {T}he approximation of certain numbers connected with the {W}eierstrass
+  function {$\wp(z)$}}, Izv. Akad. Nauk SSSR Ser. Mat. \textbf{15} (1951),
+  no.~2, 153--176, In Russian. MR 42471, Zbl 0044.27105.
+
+\bibitem{Feldman74}
+\bysame, \emph{The periods of elliptic functions}, Acta Arith. \textbf{24}
+  (1974), no.~5, 477--489, In Russian; English title as in Waldschmidt08.
+
+\bibitem{HirataKohno90}
+Noriko Hirata-Kohno, \emph{Mesures de transcendance pour les quotients de
+  p\'eriodes d'int\'egrales elliptiques}, Acta Arith. \textbf{56} (1990),
+  no.~2, 111--133.
+
+\bibitem{HirataKohno91}
+\bysame, \emph{Formes lin\'eaires de logarithmes de points alg\'ebriques sur
+  les groupes alg\'ebriques}, Invent. Math. \textbf{104} (1991), no.~2,
+  401--433.
+
+\bibitem{LiuJiangZhang26}
+Jingwen Liu, Kai Jiang, and Pingwen Zhang, \emph{Irrationality exponents of
+  logarithms of positive rational numbers}, 2026, Preprint, 7 October 2026,
+  revised 5 November 2026 (v3),
+  \href{https://arxiv.org/abs/2610.10192}{arXiv:2610.10192}.
+
+\bibitem{Masser75}
+David~W. Masser, \emph{Elliptic functions and transcendence}, Lecture Notes in
+  Math., vol. 437, Springer-Verlag, Berlin, 1975.
+
+\bibitem{DLMF}
+{NIST}, \emph{Digital {L}ibrary of {M}athematical {F}unctions}, Chapter 23,
+  \url{https://dlmf.nist.gov/23.2}, 2026.
+
+\bibitem{OpenAIPi2026}
+{OpenAI}, \emph{The irrationality exponent of {$\pi$} is 2}, Preprint dated
+  September 24, 2026, released October 6, 2026, with a Lean formalization,
+  \href{https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026}{paper}
+  and
+  \href{https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/OAI/NumberTheory/PiExponent}{Lean
+  formalization} (repository commit \texttt{fd4aeeb}), 2026.
+
+\bibitem{PhilipponWaldschmidt88}
+Patrice Philippon and Michel Waldschmidt, \emph{Formes lin\'eaires de
+  logarithmes sur les groupes alg\'ebriques commutatifs}, Illinois J. Math.
+  \textbf{32} (1988), no.~2, 281--314.
+
+\bibitem{PhilipponWaldschmidt89}
+\bysame, \emph{Formes lin\'eaires de logarithmes elliptiques et mesures de
+  transcendance}, Th\'eorie des nombres ({Q}u\'ebec, 1987), de Gruyter, Berlin,
+  1989, pp.~798--805.
+
+\bibitem{RosserSchoenfeld62}
+J.~Barkley Rosser and Lowell Schoenfeld, \emph{Approximate formulas for some
+  functions of prime numbers}, Illinois J. Math. \textbf{6} (1962), no.~1,
+  64--94.
+
+\bibitem{Roth55}
+Klaus~F. Roth, \emph{Rational approximations to algebraic numbers}, Mathematika
+  \textbf{2} (1955), 1--20.
+
+\bibitem{Schneider37}
+Theodor Schneider, \emph{Arithmetische {U}ntersuchungen elliptischer
+  {I}ntegrale}, Math. Ann. \textbf{113} (1937), no.~1, 1--13.
+
+\bibitem{Siegel32}
+Carl~Ludwig Siegel, \emph{{\"U}ber die {P}erioden elliptischer {F}unktionen},
+  J. Reine Angew. Math. \textbf{167} (1932), 62--69.
+
+\bibitem{Silverman09}
+Joseph~H. Silverman, \emph{The arithmetic of elliptic curves}, second ed.,
+  Grad. Texts in Math., vol. 106, Springer, Dordrecht, 2009.
+
+\bibitem{Waldschmidt08}
+Michel Waldschmidt, \emph{Elliptic functions and transcendence}, Surveys in
+  Number Theory, Dev. Math., vol.~17, Springer, New York, 2008, pp.~143--188.
+
+\end{thebibliography}
+
+\end{document}
