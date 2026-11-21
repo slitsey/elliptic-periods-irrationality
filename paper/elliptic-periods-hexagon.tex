@@ -52,9 +52,10 @@
 \keywords{Irrationality exponent, elliptic periods, interpolation determinants, Weierstrass sigma function}
 
 \begin{abstract}
-Let $L\subset\C$ be a lattice whose Weierstrass invariants $g_2(L)$ and $g_3(L)$ are rational. We prove that every
-nonzero real $\omega\in L$ has irrationality exponent $\mu(\omega)\le3$. By uniformization this covers every
-nonzero real period of every elliptic curve over $\Q$, with or without complex multiplication. G.~and
+We prove that every nonzero real period of an elliptic curve over $\Q$, with or without complex
+multiplication, has irrationality exponent at most $3$. Equivalently, if $L\subset\C$ is a lattice whose
+Weierstrass invariants $g_2(L)$ and $g_3(L)$ are rational, every nonzero real $\omega\in L$ satisfies
+$\mu(\omega)\le3$. G.~and
 D.~Chudnovsky proved $\mu(\omega)=2$ when the curve has complex multiplication. Their proof uses an
 interpolation determinant of jets at centres on a two-dimensional grid of periods. Without complex
 multiplication the only algebraic multiples of a real period inside the lattice are its integer multiples, so
@@ -78,13 +79,10 @@ that $|\xi-p/q|>q^{-\nu}$ for all integers $p$ and all sufficiently large intege
 $\xi$ is multiplied by a nonzero rational number. For irrational $\xi$ Dirichlet's theorem gives
 $\mu(\xi)\ge2$.
 
-For a lattice $L\subset\C$ we write $g_2(L)=60\sum'\lambda^{-4}$ and $g_3(L)=140\sum'\lambda^{-6}$, the sums
-running over $\lambda\in L\setminus\{0\}$. These are the invariants of the Weierstrass function $\wp_L$, which
-satisfies $\wp_L'^2=4\wp_L^3-g_2(L)\wp_L-g_3(L)$.
-
-\begin{theorem}\label{thm:main}
-Let $L\subset\C$ be a lattice with $g_2(L),g_3(L)\in\Q$, and let $\omega\in L$ be real and nonzero. For every
-$\varepsilon>0$ there is an integer $q_0=q_0(\varepsilon,\omega)$ such that
+\begin{theorem}\label{cor:curve}
+Let $E$ be an elliptic curve over $\Q$, let $\eta$ be a nonzero invariant differential on $E$ defined over $\Q$,
+and let $\omega$ be a nonzero real period of $\eta$. For every $\varepsilon>0$ there is an integer
+$q_0=q_0(\varepsilon,\omega)$ such that
 \[
  \Bigl|\omega-\frac pq\Bigr|>q^{-3-\varepsilon}
 \]
@@ -92,20 +90,25 @@ for all integers $p$ and all integers $q\ge q_0$. In particular $\omega$ is irra
 $2\le\mu(\omega)\le3$.
 \end{theorem}
 
-The curve $y^2=x^3+Ax+B$ with $A,B\in\C$ and $4A^3+27B^2\ne0$ is uniformized by the lattice $\Lambda$ with
-$g_2(\Lambda)=-4A$ and $g_3(\Lambda)=-4B$, through $x=\wp_\Lambda(z)$ and $y=\wp_\Lambda'(z)/2$
-\cite[Section~VI.5]{Silverman09}. The differential $dx/(2y)$ pulls back to $dz$, so its periods form
-$\Lambda$. A rational change of variables brings any curve over $\Q$ to this form, and this gives the following
-corollary (proved in Section~\ref{sec:proof}).
+The curve may or may not have complex multiplication. For $E:y^2=x^3+Ax+B$ with $A,B\in\Q$ and $\eta=dx/(2y)$,
+the periods are the points of a lattice in $\C$, which we now describe.
 
-\begin{corollary}\label{cor:curve}
-Let $E$ be an elliptic curve over $\Q$ and let $\eta$ be a nonzero invariant differential on $E$ defined over
-$\Q$. Every nonzero real period $\omega$ of $\eta$ satisfies $\mu(\omega)\le3$. For $E:y^2=x^3+Ax+B$ with
-$A,B\in\Q$ and $\eta=dx/(2y)$ the periods are the lattice $\Lambda$ with $g_2(\Lambda)=-4A$ and
-$g_3(\Lambda)=-4B$.
-\end{corollary}
+For a lattice $L\subset\C$ we write $g_2(L)=60\sum'\lambda^{-4}$ and $g_3(L)=140\sum'\lambda^{-6}$, the sums
+running over $\lambda\in L\setminus\{0\}$. These are the invariants of the Weierstrass function $\wp_L$, which
+satisfies $\wp_L'^2=4\wp_L^3-g_2(L)\wp_L-g_3(L)$. The curve $y^2=x^3+Ax+B$ with $4A^3+27B^2\ne0$ is uniformized
+by the lattice $\Lambda$ with $g_2(\Lambda)=-4A$ and $g_3(\Lambda)=-4B$, through $x=\wp_\Lambda(z)$ and
+$y=\wp_\Lambda'(z)/2$ \cite[Section~VI.5]{Silverman09}. The differential $dx/(2y)$ pulls back to $dz$, so its
+periods form $\Lambda$. Conversely, every lattice $L$ with $g_2(L),g_3(L)\in\Q$ arises in this way from the curve
+$y^2=x^3-\tfrac14g_2(L)x-\tfrac14g_3(L)$. Theorem~\ref{cor:curve} is therefore equivalent to the following
+statement about lattices, which is the form we prove (Section~\ref{sec:proof}).
 
-The curve may or may not have complex multiplication. The proof does not give $q_0(\varepsilon,\omega)$: the
+\begin{theorem}\label{thm:main}
+Let $L\subset\C$ be a lattice with $g_2(L),g_3(L)\in\Q$, and let $\omega\in L$ be real and nonzero. For every
+$\varepsilon>0$ there is an integer $q_0=q_0(\varepsilon,\omega)$ such that
+$|\omega-p/q|>q^{-3-\varepsilon}$ for all integers $p$ and all integers $q\ge q_0$.
+\end{theorem}
+
+The proof does not give $q_0(\varepsilon,\omega)$: the
 bound is ineffective. A formalization in Lean~4 is intended to follow. The use of AI in this work is disclosed at
 the end of the paper.
 
@@ -130,7 +133,7 @@ groups. They include the first such measures for elliptic logarithms that hold w
 work of David, Hirata-Kohno and Gaudron that these nonvanishing linear forms are not Liouville numbers. So
 $\mu(\omega)$ is finite for every nonzero real period $\omega$, with an exponent that depends on the curve. We
 have not found a numerical value of such an exponent in the literature. For curves without complex
-multiplication, Theorem~\ref{thm:main} gives, to our knowledge, the first explicit bound, and it is uniform over
+multiplication, Theorem~\ref{cor:curve} gives, to our knowledge, the first explicit bound, and it is uniform over
 all curves over $\Q$.
 
 \emph{Recent results.} Since September 2026 several results of exponent $2$ have appeared, some obtained with AI
@@ -763,7 +766,7 @@ The factor $K$ cancels from $c_\infty$ because $v_0$ is proportional to $K$. Thi
 $K^2/w_0$ and the collision rate $c_\infty$ meet in the single condition $a_0^3<\theta^2$.
 
 %% =====================================================================
-\section{Proof of Theorem~\ref{thm:main} and Corollary~\ref{cor:curve}}\label{sec:proof}
+\section{Proof of Theorems~\ref{cor:curve} and~\ref{thm:main}}\label{sec:proof}
 
 \begin{theorem}\label{thm:omega}
 For every $\nu>3$ there are only finitely many pairs $(p,q)$ of integers with $q\ge1$ and
@@ -819,7 +822,7 @@ a rational $a/b$, the pairs $(na,nb)$ would give infinitely many exceptions. So 
 Dirichlet's theorem gives $\mu(\omega)\ge2$.
 \end{proof}
 
-\begin{proof}[Proof of Corollary~\ref{cor:curve}]
+\begin{proof}[Proof of Theorem~\ref{cor:curve}]
 Take a Weierstrass equation $y^2+a_1xy+a_3y=x^3+a_2x^2+a_4x+a_6$ of $E$ over $\Q$. With
 $y_1=y+(a_1x+a_3)/2$ and $x_1=x+(a_2+a_1^2/4)/3$ it becomes $y_1^2=x_1^3+A_1x_1+B_1$ with $A_1,B_1\in\Q$, and
 $dx/(2y+a_1x+a_3)=dx_1/(2y_1)$. The invariant differentials defined over $\Q$ are the rational multiples of this
